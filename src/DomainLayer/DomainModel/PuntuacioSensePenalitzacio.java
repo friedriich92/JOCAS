@@ -1,7 +1,17 @@
 package DomainLayer.DomainModel;
 
 /**
- * Created by jedi on 10/06/14.
+ * @version 1.0
  */
 public class PuntuacioSensePenalitzacio implements IEstrategiaPuntuacio {
+
+    private int factorEncert;
+
+    public int getFactorEncert() {
+        return factorEncert;
+    }
+
+    public void setFactorEncert(int factorEncert) {
+        this.factorEncert = factorEncert;
+    }
 }
