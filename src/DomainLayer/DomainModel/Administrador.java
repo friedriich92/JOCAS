@@ -1,7 +1,17 @@
 package DomainLayer.DomainModel;
 
 /**
- * Created by jedi on 10/06/14.
+ * @version 1.0
  */
-public class Administrador {
+public class Administrador extends UsuariRegistrat {
+
+    private String tlfn;
+
+    public String getTlfn() {
+        return tlfn;
+    }
+
+    public void setTlfn(String tlfn) {
+        this.tlfn = tlfn;
+    }
 }
