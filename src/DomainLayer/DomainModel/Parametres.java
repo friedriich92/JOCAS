@@ -1,7 +1,25 @@
 package DomainLayer.DomainModel;
 
 /**
- * Created by jedi on 10/06/14.
- */
+ *  @version 1.0
+ **/
 public class Parametres {
+
+    private static Parametres instance;
+    private int nombreMaximErrors;
+
+    public static Parametres getInstance() {
+        if (instance == null) {
+            instance = new Parametres();
+        }
+        return instance;
+    }
+
+    public int getNombreMaximErrors() {
+        return nombreMaximErrors;
+    }
+
+    public void setNombreMaximErrors(int nombreMaximErrors) {
+        this.nombreMaximErrors = nombreMaximErrors;
+    }
 }
