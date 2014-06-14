@@ -5,8 +5,4 @@ package DataLayer;
  */
 public class CtrlJugador implements DomainLayer.DataInterface.CtrlJugador{
 
-
-    private String get (String entry) {
-        return entry; //sin empezar;
-    }
 }
