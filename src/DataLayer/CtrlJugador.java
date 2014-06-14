@@ -3,7 +3,7 @@ package DataLayer;
 /**
  * Created by joanbarroso on 14/06/14.
  */
-public class CtrlJugador {
+public class CtrlJugador implements DomainLayer.DataInterface.CtrlJugador{
 
 
     private String get (String entry) {
