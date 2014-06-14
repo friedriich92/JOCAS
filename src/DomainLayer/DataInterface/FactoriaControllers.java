@@ -3,6 +3,11 @@ package DomainLayer.DataInterface;
 public class FactoriaControllers {
     
     private static FactoriaControllers instance;
+    private static CtrlPartida cP;
+    private static CtrlUsuariRegistrat cUR;
+    private static CtrlCategoria cC;
+    private static CtrlJugador cJ;
+    
 
     public static FactoriaControllers getInstance() {
         if (instance == null)
@@ -11,24 +16,29 @@ public class FactoriaControllers {
     }
     
     public CtrlPartida obtenirCtrlPartida() {
-        DomainLayer.DataInterface.CtrlPartida cP = new DataLayer.CtrlPartida();
+        if (this.cP == null) 
+            cP = new DataLayer.CtrlPartida();
+         
         return cP;
     }
     
      public CtrlUsuariRegistrat obtenirCtrlUsuariRegistrat() {
-        DomainLayer.DataInterface.CtrlUsuariRegistrat cUR = new DataLayer.CtrlUsuariRegistrat();
+        if (this.cUR == null) 
+            cUR = new DataLayer.CtrlUsuariRegistrat();
+        
         return cUR;
     }
     
     public CtrlCategoria getCtrlCat() {
-        DomainLayer.DataInterface.CtrlCategoria cC = new DataLayer.CtrlCategoria();
+        if (this.cC == null) 
+            cC = new DataLayer.CtrlCategoria();
         return cC;
     }
     
     public CtrlJugador getCtrlJugador() {
-        DomainLayer.DataInterface.CtrlJugador cJ = new DataLayer.CtrlJugador();
+        if (this.cJ == null) 
+            cJ = new DataLayer.CtrlJugador();
         return cJ;
-
     }
     
 }

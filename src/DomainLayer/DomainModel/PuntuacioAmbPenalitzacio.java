@@ -23,4 +23,10 @@ public class PuntuacioAmbPenalitzacio implements IEstrategiaPuntuacio {
     public void setFactorError(int factorError) {
         this.factorError = factorError;
     }
+    
+    @Override
+    public int obtePuntuacio(int errors,int nEncerts) {
+        return errors*factorError + nEncerts*factorEncert;
+    }
+    
 }

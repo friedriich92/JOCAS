@@ -9,19 +9,19 @@ public class Paraula {
     private int nombreDeLletres;
 
     //setters
-    private void setNom (String nouNom) {
+    public void setNom (String nouNom) {
         this.nom = nouNom;
     }
 
-    private void setNombreDeLletres(int nouNombreDeLletres) {
+    public void setNombreDeLletres(int nouNombreDeLletres) {
         this.nombreDeLletres = nouNombreDeLletres;
     }
     //getters
-    private String getNom () {
+    public String getNom () {
         return this.nom;
     }
 
-    private int getNombreDeLletres() {
+    public int getNombreDeLletres() {
         return this.nombreDeLletres;
     }
 

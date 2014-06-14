@@ -39,5 +39,10 @@ public class Jugador extends UsuariRegistrat {
     public boolean esJugador() {
         return true;
     }
+    
+    public void actualitzaRols(Partida p) {
+        partidaActual = null;
+        partidesJugades.add(p);
+    }
 
 }
