@@ -26,21 +26,122 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        marginHeader = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        marginTopButtons = new javax.swing.JPanel();
+        panelButtons = new javax.swing.JPanel();
+        buttonJugarPartida = new javax.swing.JButton();
+        buttonConsultarCategories = new javax.swing.JButton();
+        buttonAltres = new javax.swing.JButton();
+        marginTopButtonSortir = new javax.swing.JPanel();
+        buttonSortir = new javax.swing.JButton();
+        marginFooter = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Endevina Paraules");
+        setPreferredSize(new java.awt.Dimension(512, 384));
+        setResizable(false);
+        getContentPane().setLayout(new java.awt.FlowLayout());
+
+        marginHeader.setPreferredSize(new java.awt.Dimension(512, 25));
+
+        javax.swing.GroupLayout marginHeaderLayout = new javax.swing.GroupLayout(marginHeader);
+        marginHeader.setLayout(marginHeaderLayout);
+        marginHeaderLayout.setHorizontalGroup(
+            marginHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        marginHeaderLayout.setVerticalGroup(
+            marginHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 25, Short.MAX_VALUE)
         );
+
+        getContentPane().add(marginHeader);
+
+        titleLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("Endevina Paraules");
+        titleLabel.setMaximumSize(new java.awt.Dimension(512, 29));
+        titleLabel.setMinimumSize(new java.awt.Dimension(512, 29));
+        titleLabel.setPreferredSize(new java.awt.Dimension(512, 29));
+        getContentPane().add(titleLabel);
+
+        marginTopButtons.setPreferredSize(new java.awt.Dimension(512, 50));
+        marginTopButtons.setRequestFocusEnabled(false);
+
+        javax.swing.GroupLayout marginTopButtonsLayout = new javax.swing.GroupLayout(marginTopButtons);
+        marginTopButtons.setLayout(marginTopButtonsLayout);
+        marginTopButtonsLayout.setHorizontalGroup(
+            marginTopButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
+        );
+        marginTopButtonsLayout.setVerticalGroup(
+            marginTopButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(marginTopButtons);
+
+        panelButtons.setPreferredSize(new java.awt.Dimension(200, 250));
+
+        buttonJugarPartida.setText("Jugar Partida");
+        buttonJugarPartida.setPreferredSize(new java.awt.Dimension(200, 25));
+        buttonJugarPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonJugarPartidaActionPerformed(evt);
+            }
+        });
+        panelButtons.add(buttonJugarPartida);
+
+        buttonConsultarCategories.setText("Consultar Categories");
+        buttonConsultarCategories.setPreferredSize(new java.awt.Dimension(200, 25));
+        panelButtons.add(buttonConsultarCategories);
+
+        buttonAltres.setText("Altres");
+        buttonAltres.setPreferredSize(new java.awt.Dimension(200, 25));
+        panelButtons.add(buttonAltres);
+
+        marginTopButtonSortir.setPreferredSize(new java.awt.Dimension(200, 75));
+
+        javax.swing.GroupLayout marginTopButtonSortirLayout = new javax.swing.GroupLayout(marginTopButtonSortir);
+        marginTopButtonSortir.setLayout(marginTopButtonSortirLayout);
+        marginTopButtonSortirLayout.setHorizontalGroup(
+            marginTopButtonSortirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        marginTopButtonSortirLayout.setVerticalGroup(
+            marginTopButtonSortirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 75, Short.MAX_VALUE)
+        );
+
+        panelButtons.add(marginTopButtonSortir);
+
+        buttonSortir.setText("Sortir");
+        panelButtons.add(buttonSortir);
+
+        getContentPane().add(panelButtons);
+
+        marginFooter.setPreferredSize(new java.awt.Dimension(512, 25));
+
+        javax.swing.GroupLayout marginFooterLayout = new javax.swing.GroupLayout(marginFooter);
+        marginFooter.setLayout(marginFooterLayout);
+        marginFooterLayout.setHorizontalGroup(
+            marginFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
+        );
+        marginFooterLayout.setVerticalGroup(
+            marginFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 25, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(marginFooter);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonJugarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJugarPartidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonJugarPartidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +178,15 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonAltres;
+    private javax.swing.JButton buttonConsultarCategories;
+    private javax.swing.JButton buttonJugarPartida;
+    private javax.swing.JButton buttonSortir;
+    private javax.swing.JPanel marginFooter;
+    private javax.swing.JPanel marginHeader;
+    private javax.swing.JPanel marginTopButtonSortir;
+    private javax.swing.JPanel marginTopButtons;
+    private javax.swing.JPanel panelButtons;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }
