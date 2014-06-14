@@ -41,4 +41,8 @@ public class UsuariRegistrat {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+    
+    public boolean contrassenyaIncorrecta(String passwd) {
+        return !passwd.equals(this.pwd);
+    }
 }
