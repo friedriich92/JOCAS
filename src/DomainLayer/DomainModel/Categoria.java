@@ -6,11 +6,11 @@ package DomainLayer.DomainModel;
 public class Categoria {
     private String nom;
 
-    private void setNom (String nouNom) {
+    public void setNom (String nouNom) {
         this.nom = nouNom;
     }
 
-    private String getNom () {
+    public String getNom () {
         return this.nom;
     }
 }

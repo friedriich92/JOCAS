@@ -14,4 +14,9 @@ public class PuntuacioSensePenalitzacio implements IEstrategiaPuntuacio {
     public void setFactorEncert(int factorEncert) {
         this.factorEncert = factorEncert;
     }
+    
+    @Override
+    public int obtePuntuacio(int errors,int nEncerts) {
+        return nEncerts*factorEncert;
+    }
 }

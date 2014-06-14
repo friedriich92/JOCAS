@@ -13,33 +13,50 @@ public class Casella {
     private ArrayList<Lletra> lletresErronies;
 
     //getters
-    private int getPosicio () {
+    public int getPosicio() {
         return posicio;
     }
 
-    private Lletra getLletraCorrecta() {
+    public Lletra getLletraCorrecta() {
         return this.lletraCorrecta;
     }
 
-    private boolean getEncert() {
+    public boolean getEncert() {
         return this.esEncertat;
     }
 
     //setters
-    private void setPosicio (int novaPosicio) {
+    public void setPosicio (int novaPosicio) {
         this.posicio = novaPosicio;
     }
 
-    private void setLletraCorrecta (Lletra novaLletraCorrecta) {
+    public void setLletraCorrecta (Lletra novaLletraCorrecta) {
         this.lletraCorrecta = novaLletraCorrecta;
     }
 
-    private void setEsEncertat (boolean encert) {
+    public void setEsEncertat (boolean encert) {
         this.esEncertat = encert;
     }
 
-    private void setNovaLletraErronia (Lletra novaLletra) {
+    public void setNovaLletraErronia (Lletra novaLletra) {
         this.lletresErronies.add(novaLletra);
+    }
+    
+    public boolean comprovaCasella(int pos, String lletra, Integer acertadaAct) {
+        if (posicio == pos) {
+            Lletra a = Lletra.valueOf(lletra);
+            boolean encert = (lletra.equals(lletraCorrecta.toString()));
+            if (!encert) { 
+                lletresErronies.add(a);
+                esEncertat = false;
+            }
+            else { 
+                acertadaAct = 1;
+                esEncertat = true;
+            }
+            return encert;
+        }
+        return esEncertat;
     }
 
 

@@ -1,7 +1,10 @@
 package DomainLayer.DataInterface;
 
+import DomainLayer.DomainModel.Partida;
+
 /**
  * Created by jedi on 10/06/14.
  */
 public interface CtrlPartida {
+    public Partida getPartida(int idP);
 }

@@ -1,16 +1,14 @@
-package Excepcions;
+package DomainLayer.Excepcions;
 
-public class usuariNoJugador extends Exception {
+public class ExcepcionsAS extends Exception {
 
-    public usuariNoJugador(String exc)
+    public ExcepcionsAS(String exc)
     {
         super(exc);
     }
-    
     @Override
     public String getMessage()
     {
         return super.getMessage();
     }
-    
 }
