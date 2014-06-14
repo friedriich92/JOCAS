@@ -34,5 +34,10 @@ public class Jugador extends UsuariRegistrat {
     public void setPartidesJugades(ArrayList<Partida> partidesJugades) {
         this.partidesJugades = partidesJugades;
     }
+    
+    @Override
+    public boolean esJugador() {
+        return true;
+    }
 
 }

@@ -45,4 +45,8 @@ public class UsuariRegistrat {
     public boolean contrassenyaIncorrecta(String passwd) {
         return !passwd.equals(this.pwd);
     }
+    
+    public boolean esJugador() {
+        return false;
+    }
 }
