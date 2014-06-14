@@ -44,5 +44,10 @@ public class Jugador extends UsuariRegistrat {
         partidaActual = null;
         partidesJugades.add(p);
     }
+    
+    public void partidaActualAcabada() {
+        partidesJugades.add(partidaActual);
+        partidaActual = null;
+    }
 
 }

@@ -58,6 +58,11 @@ public class JugarPartidaUseCaseController {
         return tup;
     }
     
-    
-    
+    public void AturarPartida() {
+        FactoriaControllers f = FactoriaControllers.getInstance();
+        CtrlJugador cj = f.getCtrlJugador();
+        Jugador j = cj.obteJugador(nomUsuari);
+        j.partidaActualAcabada();
+    }
+
 }
