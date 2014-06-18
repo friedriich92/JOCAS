@@ -7,4 +7,6 @@ import DomainLayer.DomainModel.Jugador;
  */
 public interface CtrlJugador {
     public Jugador obteJugador(String nomUsuari);
+    
+    public void aturarPartidaActual(String nomUsuari);
 }

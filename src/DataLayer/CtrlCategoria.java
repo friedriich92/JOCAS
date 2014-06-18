@@ -8,9 +8,9 @@ import java.util.List;
  */
 public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
     @Override
-    public List<String> obteNomCategories() {
+    public String[] obteNomCategories() {
         //codigo para que deje compilar
-        List<String> lista = new ArrayList<String>();
+        String[] lista = null;
         return lista;
     }
 }

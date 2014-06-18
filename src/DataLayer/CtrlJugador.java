@@ -12,5 +12,10 @@ public class CtrlJugador implements DomainLayer.DataInterface.CtrlJugador{
         Jugador j = new Jugador();
         return j;
     }
+    
+    @Override
+    public void aturarPartidaActual(String nomUsuari) {
+        
+    }
 
 }

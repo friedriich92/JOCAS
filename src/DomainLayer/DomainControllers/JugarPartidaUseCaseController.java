@@ -3,12 +3,7 @@ package DomainLayer.DomainControllers;
 import DomainLayer.Excepcions.*;
 import DomainLayer.DataInterface.*;
 import DomainLayer.DomainModel.*;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by jedi on 10/06/14.
- */
 
 public class JugarPartidaUseCaseController {
     String nomUsuari;
@@ -33,9 +28,9 @@ public class JugarPartidaUseCaseController {
         nomUsuari = userN;
     }
     
-    public List<String> ObtenirCategories() {
+    public String[] ObtenirCategories() {
         ConsultarCategoriesUseCaseController cGUSC = new ConsultarCategoriesUseCaseController();
-        List<String> nomCategories = new ArrayList<String>();
+        String[] nomCategories = null;
         try {
             nomCategories = cGUSC.ConsultarCategories();
         }
@@ -45,24 +40,26 @@ public class JugarPartidaUseCaseController {
         return nomCategories;
     }
     
-    public List<Integer> FerJugada(int pos, String lletra) {
+    public int[] FerJugada(int pos, String lletra) {
         FactoriaControllers f = FactoriaControllers.getInstance();
         CtrlPartida cP = f.obtenirCtrlPartida();
-        Partida p = cP.getPartida(idP);
-        List<Integer> tup = new ArrayList<Integer>();
-        try {
-            tup = p.FerJugada(pos, lletra);
+        int[] tup = null;
+        //try {
+            tup = cP.ferJugada(idP, pos, lletra);
+        /*
         } catch (ExcepcionsAS eAS) {
             eAS.getMessage();
         }
+        */
         return tup;
     }
     
     public void AturarPartida() {
         FactoriaControllers f = FactoriaControllers.getInstance();
         CtrlJugador cj = f.getCtrlJugador();
-        Jugador j = cj.obteJugador(nomUsuari);
-        j.partidaActualAcabada();
+        //Jugador j = cj.obteJugador(nomUsuari);
+        //j.partidaActualAcabada();
+        cj.aturarPartidaActual(nomUsuari);
     }
 
 }

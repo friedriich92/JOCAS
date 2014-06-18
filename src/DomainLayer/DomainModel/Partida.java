@@ -83,6 +83,7 @@ public class Partida {
         this.caselles = caselles;
     }
     
+    /*
     public List<Integer> FerJugada(int pos, String lletra) throws ExcepcionsAS {
         Lletra[] lletres = Lletra.values();
         boolean found = false;
@@ -119,6 +120,7 @@ public class Partida {
         tup.add(errors);
         return tup;
     }
+    */
     
     
 }

@@ -14,9 +14,17 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     /**
      * Creates new form FerJugadaJugarPartidaGUI
      */
-    public FerJugadaJugarPartidaGUI() {
+    public FerJugadaJugarPartidaGUI(int puntuacioInicial, int nombreMaximErrors,
+                                    int puntuacioPerEncert, int puntuacioPerError,
+                                    int nombreCaselles) {
         initComponents();
-        mostrarCaselles(6);
+        mostrarCaselles(nombreCaselles);
+        pEncertLabel.setText(String.valueOf(puntuacioPerEncert));
+        pErrorLabel.setText(String.valueOf(puntuacioPerError));
+        nMaxErrorsLabel.setText(String.valueOf(nombreMaximErrors));
+        nEncertsLabel.setText("0");
+        nErrorsLabel.setText("0");
+        nPuntuacioLabel.setText(String.valueOf(puntuacioInicial));
     }
     
     private void mostrarCaselles(int nombreCaselles) {
