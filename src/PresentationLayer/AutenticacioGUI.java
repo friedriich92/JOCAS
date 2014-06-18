@@ -10,12 +10,12 @@ package PresentationLayer;
  *
  * @author joanbarroso
  */
-public class AuntenticacioGUI extends javax.swing.JFrame {
+public class AutenticacioGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form AuntenticacioGUI
      */
-    public AuntenticacioGUI() {
+    public AutenticacioGUI() {
         initComponents();
     }
 
@@ -29,6 +29,8 @@ public class AuntenticacioGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
@@ -49,6 +51,13 @@ public class AuntenticacioGUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(512, 384));
@@ -76,7 +85,7 @@ public class AuntenticacioGUI extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(512, 40));
         jPanel1.setPreferredSize(new java.awt.Dimension(512, 40));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Ok");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -100,7 +109,7 @@ public class AuntenticacioGUI extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3);
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Tornar");
         jPanel1.add(jButton2);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
@@ -133,20 +142,20 @@ public class AuntenticacioGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AuntenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AuntenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AuntenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AuntenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutenticacioGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AuntenticacioGUI().setVisible(true);
+                new AutenticacioGUI().setVisible(true);
             }
         });
     }
@@ -157,10 +166,12 @@ public class AuntenticacioGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
