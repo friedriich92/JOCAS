@@ -5,7 +5,6 @@
 package PresentationLayer;
 
 
-import javax.swing.ImageIcon;
 /**
  *
  * @author joaquin.campos
@@ -16,8 +15,12 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
      * Creates new form FerJugadaJugarPartidaGUI
      */
     public FerJugadaJugarPartidaGUI() {
+        
+        JugarPartidaController controlador = new JugarPartidaController();
+        int[] dadesPartida = controlador.getDadesPartida();
+        
         initComponents();
-        mostrarCaselles(6);
+        mostrarCaselles(dadesPartida[4]);
     }
     
     private void mostrarCaselles(int nombreCaselles) {
@@ -136,6 +139,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         casellesPanel.setMinimumSize(new java.awt.Dimension(275, 35));
         casellesPanel.setPreferredSize(new java.awt.Dimension(275, 35));
 
+        casella0TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella0TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella0TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella0TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +149,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella0TextField);
 
+        casella1TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella1TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella1TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella1TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +159,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella1TextField);
 
+        casella2TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella2TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella2TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella2TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -163,6 +169,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella2TextField);
 
+        casella3TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella3TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella3TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella3TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -172,6 +179,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella3TextField);
 
+        casella4TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella4TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella4TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella4TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -181,6 +189,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella4TextField);
 
+        casella5TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella5TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella5TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella5TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -190,6 +199,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella5TextField);
 
+        casella6TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella6TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella6TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella6TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -199,6 +209,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella6TextField);
 
+        casella7TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella7TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella7TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella7TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -208,6 +219,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
         casellesPanel.add(casella7TextField);
 
+        casella8TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella8TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella8TextField.setPreferredSize(new java.awt.Dimension(25, 25));
         casella8TextField.addActionListener(new java.awt.event.ActionListener() {
@@ -322,15 +334,14 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
                             .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
                                 .addComponent(errorsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nErrorsLabel)))
-                        .addContainerGap(328, Short.MAX_VALUE))
+                                .addComponent(nErrorsLabel))))
                     .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
                         .addComponent(tickImageLabel)
                         .addGap(18, 18, 18)
                         .addComponent(encertsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nEncertsLabel)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(nEncertsLabel)))
+                .addContainerGap(328, Short.MAX_VALUE))
         );
         dynamicInfoPanelLayout.setVerticalGroup(
             dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

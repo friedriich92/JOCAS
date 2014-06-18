@@ -140,7 +140,8 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonJugarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJugarPartidaActionPerformed
-        new AutenticacioGUI().setVisible(true);  
+        new JugarPartidaController().premerJugarPartida();
+        dispose();
     }//GEN-LAST:event_buttonJugarPartidaActionPerformed
 
     /**
