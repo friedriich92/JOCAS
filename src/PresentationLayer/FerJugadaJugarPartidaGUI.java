@@ -45,6 +45,8 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         javax.swing.ImageIcon tickImage = new javax.swing.ImageIcon("images/tick.png", "Encerts");
         tickImageLabel = new javax.swing.JLabel(tickImage);
@@ -60,6 +62,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jugar Partida");
+        setMinimumSize(new java.awt.Dimension(512, 384));
         setPreferredSize(new java.awt.Dimension(512, 384));
         setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
@@ -172,17 +175,23 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
         jLabel1.setText("Punts per encert:");
 
+        jLabel2.setText("PxEncerts");
         jLabel2.setMaximumSize(new java.awt.Dimension(30, 15));
         jLabel2.setMinimumSize(new java.awt.Dimension(30, 15));
         jLabel2.setPreferredSize(new java.awt.Dimension(30, 15));
 
         jLabel3.setText("Punts per error:");
 
+        jLabel4.setText("PxError");
         jLabel4.setMaximumSize(new java.awt.Dimension(30, 15));
         jLabel4.setMinimumSize(new java.awt.Dimension(30, 15));
         jLabel4.setPreferredSize(new java.awt.Dimension(30, 15));
 
-        jLabel5.setText("Nombre màxim d'errors:");
+        jLabel5.setText("Nombre màxim");
+
+        jLabel6.setText("d'errors:");
+
+        jLabel7.setText("maxErrors");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -193,14 +202,18 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(39, 39, 39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(16, 16, 16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel5)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,7 +228,11 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addGap(15, 15, 15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel2);
@@ -397,6 +414,8 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
