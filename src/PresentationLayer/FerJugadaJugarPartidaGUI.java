@@ -17,8 +17,56 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
      */
     public FerJugadaJugarPartidaGUI() {
         initComponents();
+        mostrarCaselles(6);
     }
-
+    
+    private void mostrarCaselles(int nombreCaselles) {
+        
+        switch(nombreCaselles) {
+            case 8:
+                casella8TextField.setVisible(false);
+                break;
+            case 7:
+                casella8TextField.setVisible(false);
+                casella7TextField.setVisible(false);
+                break;
+            case 6:
+                casella8TextField.setVisible(false);
+                casella7TextField.setVisible(false);
+                casella6TextField.setVisible(false);
+                break;
+            case 5:
+                casella8TextField.setVisible(false);
+                casella7TextField.setVisible(false);
+                casella6TextField.setVisible(false);
+                casella5TextField.setVisible(false);
+                break;
+            case 4:
+                casella8TextField.setVisible(false);
+                casella7TextField.setVisible(false);
+                casella6TextField.setVisible(false);
+                casella5TextField.setVisible(false);
+                casella4TextField.setVisible(false);
+                break;
+            case 3:
+                casella8TextField.setVisible(false);
+                casella7TextField.setVisible(false);
+                casella6TextField.setVisible(false);
+                casella5TextField.setVisible(false);
+                casella4TextField.setVisible(false);
+                casella3TextField.setVisible(false);
+                break;
+            case 2:
+                casella8TextField.setVisible(false);
+                casella7TextField.setVisible(false);
+                casella6TextField.setVisible(false);
+                casella5TextField.setVisible(false);
+                casella4TextField.setVisible(false);
+                casella3TextField.setVisible(false);
+                casella2TextField.setVisible(false);
+                break;
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,281 +76,294 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        marginHeader = new javax.swing.JPanel();
+        casellesPanel = new javax.swing.JPanel();
+        casella0TextField = new javax.swing.JTextField();
+        casella1TextField = new javax.swing.JTextField();
+        casella2TextField = new javax.swing.JTextField();
+        casella3TextField = new javax.swing.JTextField();
+        casella4TextField = new javax.swing.JTextField();
+        casella5TextField = new javax.swing.JTextField();
+        casella6TextField = new javax.swing.JTextField();
+        casella7TextField = new javax.swing.JTextField();
+        casella8TextField = new javax.swing.JTextField();
+        staticInfoPanel = new javax.swing.JPanel();
+        puntsPerEncertLabel = new javax.swing.JLabel();
+        pEncertLabel = new javax.swing.JLabel();
+        puntsPerErrorLabel = new javax.swing.JLabel();
+        pErrorLabel = new javax.swing.JLabel();
+        nombreMaximDErrorsLabel = new javax.swing.JLabel();
+        nMaxErrorsLabel = new javax.swing.JLabel();
+        dynamicInfoPanel = new javax.swing.JPanel();
         javax.swing.ImageIcon tickImage = new javax.swing.ImageIcon("images/tick.png", "Encerts");
         tickImageLabel = new javax.swing.JLabel(tickImage);
         javax.swing.ImageIcon crossImage = new javax.swing.ImageIcon("images/cross.png", "Errors");
         crossImageLabel = new javax.swing.JLabel(crossImage);
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        encertsLabel = new javax.swing.JLabel();
+        errorsLabel = new javax.swing.JLabel();
+        nEncertsLabel = new javax.swing.JLabel();
+        nErrorsLabel = new javax.swing.JLabel();
+        puntuacioLabel = new javax.swing.JLabel();
+        nPuntuacioLabel = new javax.swing.JLabel();
+        enviarLletraButton = new javax.swing.JButton();
         marginButtons = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        aturarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Jugar Partida");
+        setTitle("Fer Jugada - Jugar Partida");
         setMinimumSize(new java.awt.Dimension(512, 384));
         setPreferredSize(new java.awt.Dimension(512, 384));
         setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
-        jPanel3.setMinimumSize(new java.awt.Dimension(512, 40));
-        jPanel3.setPreferredSize(new java.awt.Dimension(512, 40));
+        marginHeader.setMinimumSize(new java.awt.Dimension(512, 40));
+        marginHeader.setPreferredSize(new java.awt.Dimension(512, 40));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout marginHeaderLayout = new javax.swing.GroupLayout(marginHeader);
+        marginHeader.setLayout(marginHeaderLayout);
+        marginHeaderLayout.setHorizontalGroup(
+            marginHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 512, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        marginHeaderLayout.setVerticalGroup(
+            marginHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel3);
+        getContentPane().add(marginHeader);
 
-        jPanel1.setMinimumSize(new java.awt.Dimension(275, 90));
+        casellesPanel.setMaximumSize(new java.awt.Dimension(275, 35));
+        casellesPanel.setMinimumSize(new java.awt.Dimension(275, 35));
+        casellesPanel.setPreferredSize(new java.awt.Dimension(275, 35));
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField1.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField1.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        casella0TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella0TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella0TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                casella0TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1);
+        casellesPanel.add(casella0TextField);
 
-        jTextField2.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField2.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        casella1TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella1TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella1TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                casella1TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2);
+        casellesPanel.add(casella1TextField);
 
-        jTextField10.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField10.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        casella2TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella2TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella2TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                casella2TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField10);
+        casellesPanel.add(casella2TextField);
 
-        jTextField11.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField11.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        casella3TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella3TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella3TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                casella3TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField11);
+        casellesPanel.add(casella3TextField);
 
-        jTextField12.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField12.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        casella4TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella4TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella4TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                casella4TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField12);
+        casellesPanel.add(casella4TextField);
 
-        jTextField13.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField13.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        casella5TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella5TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella5TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                casella5TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField13);
+        casellesPanel.add(casella5TextField);
 
-        jTextField14.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField14.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+        casella6TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella6TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella6TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+                casella6TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField14);
+        casellesPanel.add(casella6TextField);
 
-        jTextField15.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField15.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        casella7TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella7TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella7TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                casella7TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField15);
+        casellesPanel.add(casella7TextField);
 
-        jTextField16.setMinimumSize(new java.awt.Dimension(25, 25));
-        jTextField16.setPreferredSize(new java.awt.Dimension(25, 25));
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        casella8TextField.setMinimumSize(new java.awt.Dimension(25, 25));
+        casella8TextField.setPreferredSize(new java.awt.Dimension(25, 25));
+        casella8TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                casella8TextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField16);
+        casellesPanel.add(casella8TextField);
 
-        getContentPane().add(jPanel1);
+        getContentPane().add(casellesPanel);
 
-        jPanel2.setMinimumSize(new java.awt.Dimension(200, 90));
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 90));
+        staticInfoPanel.setMinimumSize(new java.awt.Dimension(200, 90));
+        staticInfoPanel.setPreferredSize(new java.awt.Dimension(200, 90));
 
-        jLabel1.setText("Punts per encert:");
+        puntsPerEncertLabel.setText("Punts per encert:");
 
-        jLabel2.setText("PxEncerts");
-        jLabel2.setMaximumSize(new java.awt.Dimension(30, 15));
-        jLabel2.setMinimumSize(new java.awt.Dimension(30, 15));
-        jLabel2.setPreferredSize(new java.awt.Dimension(30, 15));
+        pEncertLabel.setText("pEncert");
+        pEncertLabel.setMaximumSize(new java.awt.Dimension(30, 15));
+        pEncertLabel.setMinimumSize(new java.awt.Dimension(30, 15));
+        pEncertLabel.setPreferredSize(new java.awt.Dimension(30, 15));
 
-        jLabel3.setText("Punts per error:");
+        puntsPerErrorLabel.setText("Punts per error:");
 
-        jLabel4.setText("PxError");
-        jLabel4.setMaximumSize(new java.awt.Dimension(30, 15));
-        jLabel4.setMinimumSize(new java.awt.Dimension(30, 15));
-        jLabel4.setPreferredSize(new java.awt.Dimension(30, 15));
+        pErrorLabel.setText("pError");
+        pErrorLabel.setMaximumSize(new java.awt.Dimension(30, 15));
+        pErrorLabel.setMinimumSize(new java.awt.Dimension(30, 15));
+        pErrorLabel.setPreferredSize(new java.awt.Dimension(30, 15));
 
-        jLabel5.setText("Nombre màxim");
+        nombreMaximDErrorsLabel.setText("<html> Nombre màxim <br> \nd'errors:");
 
-        jLabel6.setText("d'errors:");
+        nMaxErrorsLabel.setText("nMaxErrors");
 
-        jLabel7.setText("maxErrors");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout staticInfoPanelLayout = new javax.swing.GroupLayout(staticInfoPanel);
+        staticInfoPanel.setLayout(staticInfoPanelLayout);
+        staticInfoPanelLayout.setHorizontalGroup(
+            staticInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staticInfoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                .addGroup(staticInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(staticInfoPanelLayout.createSequentialGroup()
+                        .addComponent(puntsPerEncertLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(pEncertLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(staticInfoPanelLayout.createSequentialGroup()
+                        .addComponent(puntsPerErrorLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel5)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(pErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(staticInfoPanelLayout.createSequentialGroup()
+                        .addComponent(nombreMaximDErrorsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nMaxErrorsLabel)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        staticInfoPanelLayout.setVerticalGroup(
+            staticInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staticInfoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(staticInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(puntsPerEncertLabel)
+                    .addComponent(pEncertLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addContainerGap())
+                .addGroup(staticInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(puntsPerErrorLabel)
+                    .addComponent(pErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(staticInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(staticInfoPanelLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(nombreMaximDErrorsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(staticInfoPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(nMaxErrorsLabel))))
         );
 
-        getContentPane().add(jPanel2);
+        getContentPane().add(staticInfoPanel);
 
-        jPanel4.setMinimumSize(new java.awt.Dimension(512, 150));
-        jPanel4.setPreferredSize(new java.awt.Dimension(512, 150));
+        dynamicInfoPanel.setMinimumSize(new java.awt.Dimension(512, 150));
+        dynamicInfoPanel.setPreferredSize(new java.awt.Dimension(512, 150));
 
-        jLabel8.setText("Encerts:");
-        jLabel8.setMaximumSize(new java.awt.Dimension(58, 32));
-        jLabel8.setMinimumSize(new java.awt.Dimension(58, 32));
-        jLabel8.setPreferredSize(new java.awt.Dimension(58, 32));
+        encertsLabel.setText("Encerts:");
+        encertsLabel.setMaximumSize(new java.awt.Dimension(58, 32));
+        encertsLabel.setMinimumSize(new java.awt.Dimension(58, 32));
+        encertsLabel.setPreferredSize(new java.awt.Dimension(58, 32));
 
-        jLabel9.setText("Errors:");
-        jLabel9.setMaximumSize(new java.awt.Dimension(48, 32));
-        jLabel9.setMinimumSize(new java.awt.Dimension(48, 32));
-        jLabel9.setPreferredSize(new java.awt.Dimension(48, 32));
+        errorsLabel.setText("Errors:");
+        errorsLabel.setMaximumSize(new java.awt.Dimension(48, 32));
+        errorsLabel.setMinimumSize(new java.awt.Dimension(48, 32));
+        errorsLabel.setPreferredSize(new java.awt.Dimension(48, 32));
 
-        jLabel10.setText("nEncert");
+        nEncertsLabel.setText("nEncert");
 
-        jLabel11.setText("nErrors");
+        nErrorsLabel.setText("nErrors");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        puntuacioLabel.setText("Puntuació:");
+
+        nPuntuacioLabel.setText("nPunts");
+
+        javax.swing.GroupLayout dynamicInfoPanelLayout = new javax.swing.GroupLayout(dynamicInfoPanel);
+        dynamicInfoPanel.setLayout(dynamicInfoPanelLayout);
+        dynamicInfoPanelLayout.setHorizontalGroup(
+            dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(tickImageLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
                         .addComponent(crossImageLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
+                                .addComponent(puntuacioLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(nPuntuacioLabel))
+                            .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
+                                .addComponent(errorsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(nErrorsLabel)))
+                        .addContainerGap(328, Short.MAX_VALUE))
+                    .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
+                        .addComponent(tickImageLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(encertsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11)))
-                .addContainerGap(342, Short.MAX_VALUE))
+                        .addComponent(nEncertsLabel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        dynamicInfoPanelLayout.setVerticalGroup(
+            dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dynamicInfoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tickImageLabel)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(encertsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nEncertsLabel))
+                .addGap(13, 13, 13)
+                .addGroup(dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(crossImageLabel)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addContainerGap(62, Short.MAX_VALUE))
+                    .addComponent(errorsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nErrorsLabel))
+                .addGap(18, 18, 18)
+                .addGroup(dynamicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(puntuacioLabel)
+                    .addComponent(nPuntuacioLabel))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4);
+        getContentPane().add(dynamicInfoPanel);
 
-        jButton1.setText("Enviar lletra");
-        jButton1.setMaximumSize(new java.awt.Dimension(120, 25));
-        jButton1.setMinimumSize(new java.awt.Dimension(120, 25));
-        jButton1.setPreferredSize(new java.awt.Dimension(120, 25));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        enviarLletraButton.setText("Enviar lletra");
+        enviarLletraButton.setMaximumSize(new java.awt.Dimension(120, 25));
+        enviarLletraButton.setMinimumSize(new java.awt.Dimension(120, 25));
+        enviarLletraButton.setPreferredSize(new java.awt.Dimension(120, 25));
+        enviarLletraButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                enviarLletraButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
+        getContentPane().add(enviarLletraButton);
 
         marginButtons.setMinimumSize(new java.awt.Dimension(100, 25));
         marginButtons.setPreferredSize(new java.awt.Dimension(100, 25));
@@ -320,54 +381,54 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
         getContentPane().add(marginButtons);
 
-        jButton2.setText("Aturar");
-        jButton2.setMaximumSize(new java.awt.Dimension(120, 25));
-        jButton2.setMinimumSize(new java.awt.Dimension(120, 25));
-        jButton2.setPreferredSize(new java.awt.Dimension(120, 25));
-        getContentPane().add(jButton2);
+        aturarButton.setText("Aturar");
+        aturarButton.setMaximumSize(new java.awt.Dimension(120, 25));
+        aturarButton.setMinimumSize(new java.awt.Dimension(120, 25));
+        aturarButton.setPreferredSize(new java.awt.Dimension(120, 25));
+        getContentPane().add(aturarButton);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void enviarLletraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarLletraButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_enviarLletraButtonActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void casella0TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella0TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_casella0TextFieldActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void casella1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella1TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_casella1TextFieldActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void casella2TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella2TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_casella2TextFieldActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void casella3TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella3TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_casella3TextFieldActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void casella4TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella4TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_casella4TextFieldActionPerformed
 
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
+    private void casella5TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella5TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
+    }//GEN-LAST:event_casella5TextFieldActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void casella6TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella6TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_casella6TextFieldActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void casella7TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella7TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_casella7TextFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void casella8TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella8TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_casella8TextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -404,34 +465,35 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aturarButton;
+    private javax.swing.JTextField casella0TextField;
+    private javax.swing.JTextField casella1TextField;
+    private javax.swing.JTextField casella2TextField;
+    private javax.swing.JTextField casella3TextField;
+    private javax.swing.JTextField casella4TextField;
+    private javax.swing.JTextField casella5TextField;
+    private javax.swing.JTextField casella6TextField;
+    private javax.swing.JTextField casella7TextField;
+    private javax.swing.JTextField casella8TextField;
+    private javax.swing.JPanel casellesPanel;
     private javax.swing.JLabel crossImageLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel dynamicInfoPanel;
+    private javax.swing.JLabel encertsLabel;
+    private javax.swing.JButton enviarLletraButton;
+    private javax.swing.JLabel errorsLabel;
     private javax.swing.JPanel marginButtons;
+    private javax.swing.JPanel marginHeader;
+    private javax.swing.JLabel nEncertsLabel;
+    private javax.swing.JLabel nErrorsLabel;
+    private javax.swing.JLabel nMaxErrorsLabel;
+    private javax.swing.JLabel nPuntuacioLabel;
+    private javax.swing.JLabel nombreMaximDErrorsLabel;
+    private javax.swing.JLabel pEncertLabel;
+    private javax.swing.JLabel pErrorLabel;
+    private javax.swing.JLabel puntsPerEncertLabel;
+    private javax.swing.JLabel puntsPerErrorLabel;
+    private javax.swing.JLabel puntuacioLabel;
+    private javax.swing.JPanel staticInfoPanel;
     private javax.swing.JLabel tickImageLabel;
     // End of variables declaration//GEN-END:variables
 }
