@@ -37,9 +37,9 @@ public class AutenticacioGUI extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        okButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        tornarButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -85,13 +85,13 @@ public class AutenticacioGUI extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(512, 40));
         jPanel1.setPreferredSize(new java.awt.Dimension(512, 40));
 
-        jButton1.setText("Ok");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        okButton.setText("Ok");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                okButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
+        jPanel1.add(okButton);
 
         jPanel3.setMinimumSize(new java.awt.Dimension(50, 40));
         jPanel3.setPreferredSize(new java.awt.Dimension(50, 40));
@@ -109,8 +109,8 @@ public class AutenticacioGUI extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3);
 
-        jButton2.setText("Tornar");
-        jPanel1.add(jButton2);
+        tornarButton.setText("Tornar");
+        jPanel1.add(tornarButton);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
 
@@ -121,9 +121,9 @@ public class AutenticacioGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,8 +161,6 @@ public class AutenticacioGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -173,5 +171,7 @@ public class AutenticacioGUI extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton okButton;
+    private javax.swing.JButton tornarButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -39,7 +39,6 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Endevina Paraules");
-        setPreferredSize(new java.awt.Dimension(512, 384));
         setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
@@ -117,6 +116,11 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
         panelButtons.add(marginTopButtonSortir);
 
         buttonSortir.setText("Sortir");
+        buttonSortir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSortirActionPerformed(evt);
+            }
+        });
         panelButtons.add(buttonSortir);
 
         getContentPane().add(panelButtons);
@@ -143,6 +147,10 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
         new JugarPartidaController().premerJugarPartida();
         dispose();
     }//GEN-LAST:event_buttonJugarPartidaActionPerformed
+
+    private void buttonSortirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSortirActionPerformed
+        new JugarPartidaController().premerSortir();
+    }//GEN-LAST:event_buttonSortirActionPerformed
 
     /**
      * @param args the command line arguments

@@ -27,11 +27,11 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
     public SeleccionarCategoriaJugarPartidaGUI() {
 
         initComponents();
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        /*jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = categories;
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
-        });
+        });*/
     }
 
     /**
@@ -70,7 +70,7 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = categories;
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
@@ -99,7 +99,7 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(62, Short.MAX_VALUE)
+                .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(Label, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -115,6 +115,11 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
              // TODO add your handling code here:
+            if (jList1.isSelectionEmpty()) jLabel1.setText("No has escollit cap categoria");
+            else {
+                int s  = jList1.getSelectedIndex();
+                new JugarPartidaController().premerOkCategoria(categories[s]);
+            }
     }//GEN-LAST:event_okButtonActionPerformed
 
     /**
