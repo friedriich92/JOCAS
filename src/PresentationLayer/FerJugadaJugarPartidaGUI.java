@@ -15,12 +15,8 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
      * Creates new form FerJugadaJugarPartidaGUI
      */
     public FerJugadaJugarPartidaGUI() {
-        
-        JugarPartidaController controlador = new JugarPartidaController();
-        int[] dadesPartida = controlador.getDadesPartida();
-        
         initComponents();
-        mostrarCaselles(dadesPartida[4]);
+        mostrarCaselles(6);
     }
     
     private void mostrarCaselles(int nombreCaselles) {
