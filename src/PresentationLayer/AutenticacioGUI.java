@@ -33,9 +33,9 @@ public class AutenticacioGUI extends javax.swing.JFrame {
         jList1 = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        username = new javax.swing.JTextField();
+        errorPanel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         okButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -69,18 +69,18 @@ public class AutenticacioGUI extends javax.swing.JFrame {
         jLabel2.setText("Mot de pas");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 72, -1));
 
-        jPasswordField1.setMaximumSize(new java.awt.Dimension(134, 28));
-        jPasswordField1.setMinimumSize(new java.awt.Dimension(134, 28));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        password.setMaximumSize(new java.awt.Dimension(134, 28));
+        password.setMinimumSize(new java.awt.Dimension(134, 28));
+        password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                passwordActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 110, -1));
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, -1));
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 110, -1));
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 290, 460, 40));
+        errorPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(errorPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 290, 460, 40));
 
         jPanel1.setMinimumSize(new java.awt.Dimension(512, 40));
         jPanel1.setPreferredSize(new java.awt.Dimension(512, 40));
@@ -110,6 +110,11 @@ public class AutenticacioGUI extends javax.swing.JFrame {
         jPanel1.add(jPanel3);
 
         tornarButton.setText("Tornar");
+        tornarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tornarButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(tornarButton);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
@@ -117,13 +122,22 @@ public class AutenticacioGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_passwordActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        // TODO add your handling code here:
+        if (new JugarPartidaController().premerOkLogin(username.getText(), password.getText())){
+            dispose();
+        }
+        else {
+            //dudas
+        }
     }//GEN-LAST:event_okButtonActionPerformed
+
+    private void tornarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tornarButtonActionPerformed
+        new JugarPartidaController().premerTornar();
+    }//GEN-LAST:event_tornarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,17 +175,17 @@ public class AutenticacioGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel errorPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton okButton;
+    private javax.swing.JPasswordField password;
     private javax.swing.JButton tornarButton;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

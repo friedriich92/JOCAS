@@ -6,6 +6,7 @@ package PresentationLayer;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
@@ -114,12 +115,18 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-             // TODO add your handling code here:
-            if (jList1.isSelectionEmpty()) jLabel1.setText("No has escollit cap categoria");
+            JOptionPane.showMessageDialog(this, "La categoria escollida no conté paraules");
+
+            /*if (jList1.isSelectionEmpty()) jLabel1.setText("No has escollit cap categoria");
             else {
                 int s  = jList1.getSelectedIndex();
-                new JugarPartidaController().premerOkCategoria(categories[s]);
-            }
+                if (new JugarPartidaController().premerOkCategoria(categories[s])){
+                    dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(this, "La categoria escollida no conté paraules");
+                }
+            }*/
     }//GEN-LAST:event_okButtonActionPerformed
 
     /**

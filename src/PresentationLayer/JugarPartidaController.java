@@ -19,9 +19,21 @@ public class JugarPartidaController {
     public void premerJugarPartida() {
         new AutenticacioGUI().setVisible(true);
     }
-    public void premerOkLogin(String userName, String passwrod) {
+    public boolean premerOkLogin(String userName, String passwrod) {
         //aqui la comprovacion de datos de entrada
-        new SeleccionarCategoriaJugarPartidaGUI().setVisible(true);
+        boolean retorn = true;
+        boolean jugador = true;
+        boolean usuariValid = true;
+        if (usuariValid) {
+            new SeleccionarCategoriaJugarPartidaGUI().setVisible(true);
+        }
+        else if (!jugador) {
+            //dudas
+        }
+        else {
+            retorn = false;
+        }
+        return retorn;
     }
     public void premerOkCategoria(String nomCategoria) {
         //aqui pedir a dominio el numero de letras de la palabra
@@ -33,7 +45,7 @@ public class JugarPartidaController {
     }
     
     public void premerTornar() {
-        new EndevinaParaulesGUI().setVisible(true);
+        System.exit(0);
     }
     public void premerOkFinalizar(JFrame frame) {
         frame.dispose();
