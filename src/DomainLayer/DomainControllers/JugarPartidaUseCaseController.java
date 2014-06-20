@@ -1,8 +1,9 @@
 package DomainLayer.DomainControllers;
 
-import DomainLayer.Excepcions.*;
 import DomainLayer.DataInterface.*;
 import DomainLayer.DomainModel.*;
+import DomainLayer.Excepcions.*;
+import java.util.List;
 
 
 public class JugarPartidaUseCaseController {
@@ -39,6 +40,22 @@ public class JugarPartidaUseCaseController {
         }
         return nomCategories;
     }
+    
+    public int[] CrearPartida(String cat) {
+        FactoriaControllers f = FactoriaControllers.getInstance();
+        CtrlCategoria CTcat = f.getCtrlCat();
+        CtrlJugador CTj = f.getCtrlJugador();
+        Categoria C = CTcat.get(cat);
+        Paraula par = CTcat.getParaulaRandom();
+        Jugador J = CTj.obteJugador(nomUsuari);
+        Partida p = new Partida();
+        int[] tCP = p.CreaPartida(C, J, par);
+        idP = tCP[5];
+        int[] newT = new int[5];
+        for (int i = 0; i < 5; ++i) newT[i] = tCP[i];
+        return newT;
+    }
+        
     
     public int[] FerJugada(int pos, String lletra) {
         FactoriaControllers f = FactoriaControllers.getInstance();
