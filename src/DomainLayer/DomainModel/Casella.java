@@ -11,6 +11,7 @@ public class Casella {
     private Lletra lletraCorrecta;
     private boolean esEncertat;
     private ArrayList<Lletra> lletresErronies;
+    private Partida p;
 
     //getters
     public int getPosicio() {
@@ -40,6 +41,12 @@ public class Casella {
 
     public void setNovaLletraErronia (Lletra novaLletra) {
         this.lletresErronies.add(novaLletra);
+    }
+    
+    public void novaCasella(Partida p, String lletra, int i) {
+        posicio = i;
+        this.p = p;
+        lletraCorrecta = Lletra.valueOf(lletra);
     }
     
     public boolean comprovaCasella(int pos, String lletra, Integer acertadaAct) {
