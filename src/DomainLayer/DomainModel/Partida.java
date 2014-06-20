@@ -83,7 +83,68 @@ public class Partida {
         this.caselles = caselles;
     }
     
-    /*
+    public boolean guanyada() {
+        return guanyada;
+    }
+    
+    public int[] CreaPartida(Categoria C, Jugador J, Paraula par) {
+        Parametres p = Parametres.getInstance();
+        int id = p.NovaPartida();
+        int e = p.getNombreMaximErrors();
+        idPartida = id;
+        teParaula = par;
+        acabada = false;
+        guanyada = false;
+        jugador = J;
+        boolean b = jugador.HaGuanyatDos();
+        jugador.afegeixPartida(this);
+        
+        int factorEncert = 3;
+        int factorError = 1;
+        
+        if (b) {
+            FactoriaControllers f = FactoriaControllers.getInstance();
+            PuntuacioAmbPenalitzacio PAP = new PuntuacioAmbPenalitzacio();
+            // inicializar la puntuacion (?)
+            PAP.setFactorEncert(factorEncert);
+            PAP.setFactorError(factorError);
+            estrategiaPuntuacio = PAP;
+        }
+        else {
+            PuntuacioSensePenalitzacio PSP = new PuntuacioSensePenalitzacio();
+            PSP.setFactorEncert(factorEncert);
+            estrategiaPuntuacio = PSP;
+        }
+        int i = 0;
+        //par.assignaPartida(this); (esta en el diagrama pero la clase Palabra no tiene partidas
+        int nombrell = par.getNombreDeLletres();
+        while (i < nombrell - 1) {
+            String lletra = par.getLletraIessima(i);
+            Casella cas = new Casella();
+            cas.novaCasella(this, lletra, i);
+            caselles.add(cas);
+            ++i;
+        }
+        int[] res = new int[6];
+        /*
+        res(0) : puntuacioInicial
+        res(1) : nombreMaximErrors
+        res(2) : puntuacioPerEncert
+        res(3) : puntuacioPerError
+        res(4) : nombre de lletres
+        res(5) : idPartida
+        */
+        res[0] = 0;
+        res[1] = e;
+        res[2] = factorEncert;
+        res[3] = factorError;
+        res[4] = nombrell;
+        res[5] = idPartida;
+
+        return res;
+    }
+    
+    
     public List<Integer> FerJugada(int pos, String lletra) throws ExcepcionsAS {
         Lletra[] lletres = Lletra.values();
         boolean found = false;
@@ -120,7 +181,7 @@ public class Partida {
         tup.add(errors);
         return tup;
     }
-    */
+    
     
     
 }
