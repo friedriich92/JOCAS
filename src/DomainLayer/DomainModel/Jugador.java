@@ -49,5 +49,21 @@ public class Jugador extends UsuariRegistrat {
         partidesJugades.add(partidaActual);
         partidaActual = null;
     }
+    
+    public boolean HaGuanyatDos() {
+        boolean b = false;
+        int sum = 0;
+        for (Partida partidaJugada : partidesJugades) {
+            boolean g = partidaJugada.guanyada();
+            if (g) ++sum;
+            if (sum == 2) b = true;
+            if (b) break;
+        }
+        return b;
+    }
+    
+    public void afegeixPartida(Partida p) {
+        partidaActual = p;
+    }
 
 }
