@@ -24,6 +24,11 @@ public class Paraula {
     public int getNombreDeLletres() {
         return this.nombreDeLletres;
     }
-
+    
+    public String getLletraIessima(int i) {
+        String[] s = nom.split("");
+        return s[i+1];
+    }
+    
     //operacions
 }
