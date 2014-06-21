@@ -36,10 +36,14 @@ public class JugarPartidaController {
         return retorn;
     }
     public void premerOkCategoria(String nomCategoria) {
-        //aqui pedir a dominio el numero de letras de la palabra
+        //aqui pedir a dominio crear la partida. Te devolverá una tupla
+        //que contiene el número de palabras, para dibujar las casillas.
         //new FerJugadaJugarPartidaGUI().setVisible(true);
+        JugarPartidaUseCaseController controlador = new JugarPartidaUseCaseController();
+        int[] tup = controlador.CrearPartida(nomCategoria);
+        new FerJugadaJugarPartidaGUI(tup[0], tup[1], tup[2], tup[3], tup[4]).setVisible(true);
     }
-    public int[] enviaLletra(JFrame frame,int posCasella, String lletra){
+    public int[] enviaLletra(int posCasella, String lletra){
         JugarPartidaUseCaseController controlador = new JugarPartidaUseCaseController();
         return controlador.FerJugada(posCasella, lletra);
     }

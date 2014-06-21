@@ -3,10 +3,11 @@ package DomainLayer.DataInterface;
 public class FactoriaControllers {
     
     private static FactoriaControllers instance;
-    private static CtrlPartida cP;
-    private static CtrlUsuariRegistrat cUR;
-    private static CtrlCategoria cC;
-    private static CtrlJugador cJ;
+    private CtrlPartida ctrlPart;
+    private CtrlUsuariRegistrat ctrlUR;
+    private CtrlCategoria ctrlCat;
+    private CtrlJugador ctrlJug;
+    private CtrlParaula ctrlPar;
     
 
     public static FactoriaControllers getInstance() {
@@ -15,30 +16,34 @@ public class FactoriaControllers {
         return instance;
     }
     
-    public CtrlPartida obtenirCtrlPartida() {
-        if (this.cP == null) 
-            cP = new DataLayer.CtrlPartida();
-         
-        return cP;
+    public CtrlPartida getCtrlPartida() {
+        if (ctrlPart == null) 
+            ctrlPart = new DataLayer.CtrlPartida();
+        return ctrlPart;
     }
     
-     public CtrlUsuariRegistrat obtenirCtrlUsuariRegistrat() {
-        if (this.cUR == null) 
-            cUR = new DataLayer.CtrlUsuariRegistrat();
-        
-        return cUR;
+     public CtrlUsuariRegistrat getCtrlUsuariRegistrat() {
+        if (this.ctrlUR == null) 
+            ctrlUR = new DataLayer.CtrlUsuariRegistrat();
+        return ctrlUR;
     }
     
-    public CtrlCategoria getCtrlCat() {
-        if (this.cC == null) 
-            cC = new DataLayer.CtrlCategoria();
-        return cC;
+    public CtrlCategoria getCtrlCategoria() {
+        if (ctrlCat == null) 
+            ctrlCat = new DataLayer.CtrlCategoria();
+        return ctrlCat;
     }
     
     public CtrlJugador getCtrlJugador() {
-        if (this.cJ == null) 
-            cJ = new DataLayer.CtrlJugador();
-        return cJ;
+        if (ctrlJug == null) 
+            ctrlJug = new DataLayer.CtrlJugador();
+        return ctrlJug;
+    }
+    
+    public CtrlParaula getCtrlParaula() {
+        if (ctrlPar == null)
+            ctrlPar = new DataLayer.CtrlParaula();
+        return ctrlPar;
     }
     
 }

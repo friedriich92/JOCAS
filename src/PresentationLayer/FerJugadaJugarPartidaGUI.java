@@ -13,7 +13,13 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form FerJugadaJugarPartidaGUI
+     * @param puntuacioInicial
+     * @param nombreMaximErrors
+     * @param puntuacioPerEncert
+     * @param puntuacioPerError
+     * @param nombreCaselles
      */
+    
     public FerJugadaJugarPartidaGUI(int puntuacioInicial, int nombreMaximErrors,
                                     int puntuacioPerEncert, int puntuacioPerError,
                                     int nombreCaselles) {
@@ -119,7 +125,6 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fer Jugada - Jugar Partida");
         setMinimumSize(new java.awt.Dimension(512, 384));
-        setPreferredSize(new java.awt.Dimension(512, 384));
         setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
@@ -146,91 +151,46 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         casella0TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella0TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella0TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella0TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella0TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella0TextField);
 
         casella1TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella1TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella1TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella1TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella1TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella1TextField);
 
         casella2TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella2TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella2TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella2TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella2TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella2TextField);
 
         casella3TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella3TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella3TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella3TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella3TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella3TextField);
 
         casella4TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella4TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella4TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella4TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella4TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella4TextField);
 
         casella5TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella5TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella5TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella5TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella5TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella5TextField);
 
         casella6TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella6TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella6TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella6TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella6TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella6TextField);
 
         casella7TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella7TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella7TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella7TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella7TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella7TextField);
 
         casella8TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         casella8TextField.setMinimumSize(new java.awt.Dimension(25, 25));
         casella8TextField.setPreferredSize(new java.awt.Dimension(25, 25));
-        casella8TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casella8TextFieldActionPerformed(evt);
-            }
-        });
         casellesPanel.add(casella8TextField);
 
         getContentPane().add(casellesPanel);
@@ -407,43 +367,8 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
     private void enviarLletraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarLletraButtonActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_enviarLletraButtonActionPerformed
-
-    private void casella0TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella0TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella0TextFieldActionPerformed
-
-    private void casella1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella1TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella1TextFieldActionPerformed
-
-    private void casella2TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella2TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella2TextFieldActionPerformed
-
-    private void casella3TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella3TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella3TextFieldActionPerformed
-
-    private void casella4TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella4TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella4TextFieldActionPerformed
-
-    private void casella5TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella5TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella5TextFieldActionPerformed
-
-    private void casella6TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella6TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella6TextFieldActionPerformed
-
-    private void casella7TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella7TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella7TextFieldActionPerformed
-
-    private void casella8TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casella8TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casella8TextFieldActionPerformed
 
     /**
      * @param args the command line arguments

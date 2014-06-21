@@ -4,13 +4,7 @@
  */
 package PresentationLayer;
 
-import javax.swing.JFrame;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -56,7 +50,6 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
 
         panelDeBotones.setMinimumSize(new java.awt.Dimension(512, 40));
         panelDeBotones.setPreferredSize(new java.awt.Dimension(512, 40));
-        panelDeBotones.setSize(new java.awt.Dimension(512, 40));
 
         okButton.setText("Ok");
         okButton.addActionListener(new java.awt.event.ActionListener() {
