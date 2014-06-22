@@ -21,18 +21,9 @@ public class JugarPartidaController {
         new AutenticacioGUI().setVisible(true);
     }
     public boolean premerOkLogin(String userName, String passwrod,JFrame f) {
-        return false;
-        //aqui la comprovacion de datos de entrada
-        try {
-            new LoginUseCaseController().Login(userName, passwrod);
-            f.dispose();
-        }
-        catch (/*usuari no jugador*/) {
-            return true;
-        }
-        catch(/*usuair no existeix*/) {
-            return false;
-        }
+        String[] categories = {"hola", "esto" ,"es" ,"una" ,"prueva","a", "ver", "si","hace", "scroll"};
+        new SeleccionarCategoriaJugarPartidaGUI(categories).setVisible(true);
+        return true;
     }
     public void premerOkCategoria(String nomCategoria) {
         //aqui pedir a dominio crear la partida. Te devolverá una tupla
@@ -59,9 +50,5 @@ public class JugarPartidaController {
     }
     public void premerSortir() {
         System.exit(0);
-    }
-    
-    
-    
-    
+    }  
 }
