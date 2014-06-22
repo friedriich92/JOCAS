@@ -8,5 +8,13 @@ public class ServiceLocator {
             instance = new ServiceLocator();
         return instance;
     }
+    
+    public Object find(String serviceName) {
+        switch(serviceName) {
+            case "ServeiMissatgeria":
+                return new ServeiMissatgeriaStub();
+        }
+        return null;
+    }
    
 }
