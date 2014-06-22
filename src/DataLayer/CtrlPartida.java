@@ -26,7 +26,7 @@ public class CtrlPartida implements DomainLayer.DataInterface.CtrlPartida {
        session = sessionFactory.openSession();
         
         String query = "SELECT * FROM Partida WHERE idPartida = " + idP;
-        return Session.createSQLQuery(query).addEntity(Partida.class);
+        return session.createSQLQuery(query).addEntity(Partida.class);
     }
     
     @Override
