@@ -28,12 +28,6 @@ public class CtrlParaula implements DomainLayer.DataInterface.CtrlParaula {
         
         String query = "SELECT * FROM Paraula WHERE categoria = " + cat;
         
-        List<Paraula> lP =  session.createSQLQuery(query).addEntity(Paraula.class).list();
-        int tam = lP.size();
-        Paraula[] p = new Paraula[tam];
-        for (int i = 0; i < tam; ++i) {
-            p[i] = lP.get(i);
-        }
-        return p;
+        return session.createSQLQuery(query).addEntity(Paraula.class).list();
     }
 }
