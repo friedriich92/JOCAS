@@ -54,7 +54,10 @@ public class JugarPartidaUseCaseController {
         
         Jugador jug = ctrlJug.obteJugador(nomUsuari);
 
-        return ctrlPart.crearPartida(jug, randPar);
+        //¿Utilizar el Ctrl de Partida para crear la Partida?
+        //return ctrlPart.crearPartida(jug, randPar);
+        //No, se ha de crear aquí mismo.
+        return new Partida().crearPartida(jug, randPar);
 
     }
         

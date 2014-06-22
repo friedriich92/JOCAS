@@ -368,6 +368,8 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enviarLletraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarLletraButtonActionPerformed
+        
+        
         int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
         
         try {
@@ -380,8 +382,16 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
             else if (jugada[1] == 1) {
                 JOptionPane.showMessageDialog(this, "Has perdut!\nPuntuacio total: " + jugada[3]);
             }
-            else {
-                nErrorsLabel.setText("" + jugada[4]);
+            else {  //No se ha acabado la partida. Actualizamos la vista.
+                int numErrors = Integer.parseInt(nErrorsLabel.getText());
+                if (jugada[4] != numErrors) //Si ha habido error, se actualiza el label.
+                    nErrorsLabel.setText("" + jugada[4]);
+                else {
+                    int numEncerts = Integer.parseInt(nEncertsLabel.getText());
+                    nEncertsLabel.setText(String.valueOf(numEncerts+1));
+                }
+                nPuntuacioLabel.setText(String.valueOf(jugada[2]));
+                
             }
         }
         catch (/*cosa*/) {
