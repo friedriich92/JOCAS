@@ -26,7 +26,7 @@ public class CtrlParaula implements DomainLayer.DataInterface.CtrlParaula {
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         session = sessionFactory.openSession();
         
-        String query = "SELECT * FROM Paraula WHERE Categoria = " + cat;
+        String query = "SELECT * FROM Paraula WHERE categoria = " + cat;
         
         return session.createSQLQuery(query).addEntity(Paraula.class).list();
     }
