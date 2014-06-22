@@ -12,14 +12,11 @@ import javax.swing.JOptionPane;
  */
 public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
 
-            private String[] categories = {"hola", "esto" ,"es" ,"una" ,"prueva","a", "ver", "si","hace", "scroll"};
-
     
-
     /**
      * Creates new form SeleccionarCategoriaGUI
      */
-    public SeleccionarCategoriaJugarPartidaGUI() {
+    public SeleccionarCategoriaJugarPartidaGUI(String[] categories) {
 
         initComponents();
         /*jList1.setModel(new javax.swing.AbstractListModel() {
