@@ -4,25 +4,37 @@ import DomainLayer.DataInterface.FactoriaControllers;
 import DomainLayer.Excepcions.ExcepcionsAS;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.persistence.*;
 /**
  * @version 1.0
  */
+@Entity
+@Table(name="PARTIDA")
 public class Partida {
-
+	
+	@Id
+	@GeneratedValue
+	@Column(name="ID_PARTIDA")
     private int idPartida;
+	@Column(name="ACABADA")
     private boolean acabada;
+	@Column(name="GUANYADA")
     private boolean guanyada;
-    private int errors;
+    @Column(name="ERRORS")
+	private int errors;
+    @ManyToOne
+    @JoinColumn(name="TEPARAULA")
     private Paraula teParaula;
+    @ManyToOne
+    @JoinColumn(name="USERNAME_JUGADOR")
     private Jugador jugador;
     private IEstrategiaPuntuacio estrategiaPuntuacio;
+    @OneToMany(mappedBy="")
     private List<Casella> caselles;
 
     public int getIdPartida() {
         return idPartida;
     }
-
     public boolean isAcabada() {
         return acabada;
     }

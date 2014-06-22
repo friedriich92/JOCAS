@@ -1,14 +1,21 @@
 package DomainLayer.DomainModel;
 
 import java.util.ArrayList;
+import javax.persistence.*;
 
 /**
  * @version 1.0
  */
+@Entity
+@Table(name="JUGADOR")
+@PrimaryKeyJoinColumn(name="USERNAME")
 public class Jugador extends UsuariRegistrat {
 
+	@Column(name="EMAIL", unique = true)
     private String email;
+	@Column(name="PARTIDA_ACTUAL")
     private Partida partidaActual;
+	@OneToMany(mappedBy="jugador")
     private ArrayList<Partida> partidesJugades;
 
     public String getEmail() {

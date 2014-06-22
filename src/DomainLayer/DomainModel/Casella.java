@@ -1,17 +1,25 @@
 package DomainLayer.DomainModel;
 
 import java.util.ArrayList;
+import javax.persistence.*;
 
 /**
  * Created by jedi on 10/06/14.
  */
+@Entity
+@Table(name="CASELLA")
 public class Casella {
 
-    private int posicio;
+	@EmbeddedId
+	private CasellaPK casellaPK;
+
+	@Column(name="LLETRA_CORRECTA")
     private Lletra lletraCorrecta;
+	@Column(name="ES_ENCERTAT")
     private boolean esEncertat;
+	@Column(name="LLETRES_ERRONIES")
     private ArrayList<Lletra> lletresErronies;
-    private Partida p;
+    //private Partida p;
 
     //getters
     public int getPosicio() {

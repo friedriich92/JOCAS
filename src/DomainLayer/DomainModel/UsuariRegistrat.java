@@ -1,14 +1,24 @@
 package DomainLayer.DomainModel;
 
+import javax.persistence.*;
+
 /**
  * @version 1.0
  */
+@Entity
+@Table(name="USUARI_REGISTRAT")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class UsuariRegistrat {
 
-    private String nom;
-    private String cognom;
+    @Id
+    @Column(name="USERNAME")
     private String username;
+    @Column(name="PASSWORD")
     private String pwd;
+    @Column(name="NOM")
+    private String nom;
+    @Column(name="COGNOM")
+    private String cognom;
 
     public String getNom() {
         return nom;
