@@ -4,6 +4,8 @@
  */
 package PresentationLayer;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -366,8 +368,25 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enviarLletraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarLletraButtonActionPerformed
-        // TODO add your handling code here:
+        int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
         
+        try {
+            if (jugada[0] == 1) {
+                if (jugada[1] == 1) JOptionPane.showMessageDialog(this, "Has guanyat!\nPuntuacio total: " + jugada[3]);
+                else {
+                    nErrorsLabel.setText("" + jugada[4]);
+                }
+            }
+            else if (jugada[1] == 1) {
+                JOptionPane.showMessageDialog(this, "Has perdut!\nPuntuacio total: " + jugada[3]);
+            }
+            else {
+                nErrorsLabel.setText("" + jugada[4]);
+            }
+        }
+        catch (/*cosa*/) {
+            JOptionPane.showMessageDialog(this, "Caracter no valid");
+        }
     }//GEN-LAST:event_enviarLletraButtonActionPerformed
 
     /**

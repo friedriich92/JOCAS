@@ -11,19 +11,16 @@ import javax.swing.JOptionPane;
  * @author joaquin.campos
  */
 public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
-
+     private String[] categories;
     
     /**
      * Creates new form SeleccionarCategoriaGUI
+     * @param s
      */
-    public SeleccionarCategoriaJugarPartidaGUI(String[] categories) {
-
+    public SeleccionarCategoriaJugarPartidaGUI(String[] s) {
+        categories = s;
         initComponents();
-        /*jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = categories;
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });*/
+        
     }
 
     /**
@@ -106,18 +103,16 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-            JOptionPane.showMessageDialog(this, "La categoria escollida no conté paraules");
-
-            /*if (jList1.isSelectionEmpty()) jLabel1.setText("No has escollit cap categoria");
+        if (jList1.isSelectionEmpty()) jLabel1.setText("No has escollit cap categoria");
+        else {
+            int s  = jList1.getSelectedIndex();
+            if (new JugarPartidaController().premerOkCategoria(categories[s])){
+                dispose();
+            }
             else {
-                int s  = jList1.getSelectedIndex();
-                if (new JugarPartidaController().premerOkCategoria(categories[s])){
-                    dispose();
-                }
-                else {
-                    JOptionPane.showMessageDialog(this, "La categoria escollida no conté paraules");
-                }
-            }*/
+                JOptionPane.showMessageDialog(this, "La categoria escollida no conté paraules");
+            }
+        }
     }//GEN-LAST:event_okButtonActionPerformed
 
     /**
