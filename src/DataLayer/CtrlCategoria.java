@@ -29,7 +29,7 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         session = sessionFactory.openSession();
         
         String query = "SELECT nom FROM Categoria";
-        Object[] res = Session.createSQLQuery(query);
+        Object[] res = session.createSQLQuery(query);
 
         String[] lista = new String[res.length];
         for (int i = 0; i < res.length; ++i) 
@@ -52,7 +52,7 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         session = sessionFactory.openSession();
         
         String query = "SELECT * FROM Categoria WHERE nom = " + s;
-        return Session.createSQLQuery(query).addEntity(Categoria.class);
+        return session.createSQLQuery(query).addEntity(Categoria.class);
     }
     
     @Override
@@ -69,7 +69,7 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         session = sessionFactory.openSession();
         
         String query = "SELECT * FROM Paraula ORDER BY RAND() LIMIT 1";
-        return Session.createSQLQuery(query).addEntity(Paraula.class);
+        return session.createSQLQuery(query).addEntity(Paraula.class);
 
     }
     
