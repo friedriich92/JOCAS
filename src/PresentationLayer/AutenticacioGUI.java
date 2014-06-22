@@ -6,6 +6,8 @@
 
 package PresentationLayer;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author joanbarroso
@@ -61,6 +63,7 @@ public class AutenticacioGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(512, 384));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nom d'usuari");
@@ -127,11 +130,11 @@ public class AutenticacioGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        if (new JugarPartidaController().premerOkLogin(username.getText(), password.getText())){
-            dispose();
+        if (new JugarPartidaController().premerOkLogin(username.getText(), password.getText(),this)) {
+            JOptionPane.showMessageDialog(this, "L'usuari introduit no es jugador");
         }
         else {
-            //dudas
+            errorPanel.setText("Els paràmetres introduïts no coincideixen amb cap usuari de la base de dades");
         }
     }//GEN-LAST:event_okButtonActionPerformed
 

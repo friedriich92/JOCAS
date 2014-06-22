@@ -5,6 +5,7 @@
 package PresentationLayer;
 
 import DomainLayer.DomainControllers.JugarPartidaUseCaseController;
+import DomainLayer.DomainControllers.LoginUseCaseController;
 import javax.swing.JFrame;
 /**
  *
@@ -19,21 +20,19 @@ public class JugarPartidaController {
     public void premerJugarPartida() {
         new AutenticacioGUI().setVisible(true);
     }
-    public boolean premerOkLogin(String userName, String passwrod) {
+    public boolean premerOkLogin(String userName, String passwrod,JFrame f) {
+        return false;
         //aqui la comprovacion de datos de entrada
-        boolean retorn = true;
-        boolean jugador = true;
-        boolean usuariValid = true;
-        if (usuariValid) {
-            new SeleccionarCategoriaJugarPartidaGUI().setVisible(true);
+        try {
+            new LoginUseCaseController().Login(userName, passwrod);
+            f.dispose();
         }
-        else if (!jugador) {
-            //dudas
+        catch (/*usuari no jugador*/) {
+            return true;
         }
-        else {
-            retorn = false;
+        catch(/*usuair no existeix*/) {
+            return false;
         }
-        return retorn;
     }
     public void premerOkCategoria(String nomCategoria) {
         //aqui pedir a dominio crear la partida. Te devolverá una tupla

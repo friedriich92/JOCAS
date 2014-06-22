@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
 
-            private String[] categories = {"hola", "esto" ,"es" ,"una" ,"prueva"};
+            private String[] categories = {"hola", "esto" ,"es" ,"una" ,"prueva","a", "ver", "si","hace", "scroll"};
 
     
 
@@ -47,6 +47,7 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(512, 384));
+        setResizable(false);
 
         panelDeBotones.setMinimumSize(new java.awt.Dimension(512, 40));
         panelDeBotones.setPreferredSize(new java.awt.Dimension(512, 40));
