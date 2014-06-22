@@ -99,7 +99,7 @@ public class Partida {
         return guanyada;
     }
     
-    public int[] CreaPartida(Categoria C, Jugador J, Paraula par) {
+    public int[] CreaPartida(Jugador J, Paraula par) {
         Parametres p = Parametres.getInstance();
         int id = p.NovaPartida();
         int e = p.getNombreMaximErrors();
@@ -137,21 +137,13 @@ public class Partida {
             caselles.add(cas);
             ++i;
         }
-        int[] res = new int[6];
-        /*
-        res(0) : puntuacioInicial
-        res(1) : nombreMaximErrors
-        res(2) : puntuacioPerEncert
-        res(3) : puntuacioPerError
-        res(4) : nombre de lletres
-        res(5) : idPartida
-        */
+        int[] res = new int[5];
+
         res[0] = 0;
         res[1] = e;
         res[2] = factorEncert;
         res[3] = factorError;
         res[4] = nombrell;
-        res[5] = idPartida;
 
         return res;
     }
