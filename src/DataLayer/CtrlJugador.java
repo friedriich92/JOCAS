@@ -2,6 +2,7 @@ package DataLayer;
 
 import DomainLayer.DomainModel.Categoria;
 import DomainLayer.DomainModel.Jugador;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -26,8 +27,16 @@ public class CtrlJugador implements DomainLayer.DataInterface.CtrlJugador{
        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
        session = sessionFactory.openSession();
         
-        String query = "SELECT * FROM Jugador WHERE username = " + nomUsuari;
-        Jugador j = session.createSQLQuery(query).addEntity(Jugador.class);
+        String query = "SELECT * FROM UsuariRegistrat WHERE username = " + nomUsuari;
+        SQLQuery q = session.createSQLQuery(query);
+        List<Object[]> entities = q.list();
+        Jugador j = new Jugador();
+        for (Object[] entity : entities) {
+            j.setUsername(entity[0].toString());
+            j.setEmail(entity[1].toString());
+            j.setNom(entity[2].toString());
+            j.setCognom(entity[3].toSting());
+        }
         session.close();
         sessionFactory.close();
         return j;
