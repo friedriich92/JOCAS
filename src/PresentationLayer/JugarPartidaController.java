@@ -49,7 +49,15 @@ public class JugarPartidaController {
     }
     public int[] enviaLletra(int posCasella, String lletra){
         JugarPartidaUseCaseController controlador = new JugarPartidaUseCaseController();
-        return controlador.FerJugada(posCasella, lletra);
+        try {
+            return controlador.FerJugada(posCasella, lletra);
+        } catch (ExcepcionsAS e) {
+            if (e.getMessage().equals("La lletra es Incorrecta")) {
+                int[] result = new int[]{-1};
+                return result;
+            }
+            return null;
+        }
     }
     
     public void premerTornar() {

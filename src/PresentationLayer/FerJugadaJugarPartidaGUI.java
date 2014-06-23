@@ -9,6 +9,7 @@ import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.JTextField;
 
 
 /**
@@ -17,9 +18,8 @@ import javax.swing.event.DocumentListener;
  */
 public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
-    private int posicioCasellaModificada;
-    private String lletraCasellaModificada;
-    
+    private int posicioCasella;
+    private String lletraCasella;
     /**
      * Creates new form FerJugadaJugarPartidaGUI
      * @param puntuacioInicial
@@ -50,10 +50,8 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
             public void insertUpdate(DocumentEvent e) {
                 disableCaselles();
                 Object owner = e.getDocument().getProperty("owner");
-                if (owner == casella0TextField) {
-                    posicioCasellaModificada = 0;
-                    lletraCasellaModici
-                }
+                if (owner == casella0TextField)
+                    posicioCasella = 0;
                 else if (owner == casella1TextField)
                     posicioCasella = 1;
                 else if (owner == casella2TextField)
@@ -70,6 +68,8 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
                     posicioCasella = 7;
                 else if (owner == casella8TextField)
                     posicioCasella = 8;
+                JTextField ownerTextField = (JTextField)owner;
+                lletraCasella = ownerTextField.getText();
             }
         };
         
@@ -437,9 +437,11 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         
         JugarPartidaController controlador = new JugarPartidaController();
 
-        try {
-            int [] jugada = controlador.enviaLletra(posicioCasella, );
+        int [] jugada = controlador.enviaLletra(posicioCasella, lletraCasella);
             
+        if (jugada[0] == -1) 
+            JOptionPane.showMessageDialog(this, "Caracter no vàlid");
+        else {
             if (jugada[0] == 1) {
                 if (jugada[1] == 1){
                     JOptionPane.showMessageDialog(this, "Has guanyat!\nPuntuacio total: " + jugada[3]);
@@ -467,10 +469,6 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
                 
             }
         }
-        catch (ExcepcionsAS eAS) {
-            if (eAS.getMessage().equals("La lletra es Incorrecta"))JOptionPane.showMessageDialog(this, "Caracter no valid");
-        }       
-
     }//GEN-LAST:event_enviarLletraButtonActionPerformed
 
     private void aturarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aturarButtonActionPerformed
