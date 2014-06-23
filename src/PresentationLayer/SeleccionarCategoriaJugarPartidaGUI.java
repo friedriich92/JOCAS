@@ -44,6 +44,8 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
         jList1 = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(512, 384));
+        setMinimumSize(new java.awt.Dimension(512, 384));
         setPreferredSize(new java.awt.Dimension(512, 384));
         setResizable(false);
 

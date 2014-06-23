@@ -187,7 +187,9 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fer Jugada - Jugar Partida");
+        setMaximumSize(new java.awt.Dimension(512, 384));
         setMinimumSize(new java.awt.Dimension(512, 384));
+        setPreferredSize(new java.awt.Dimension(512, 384));
         setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
