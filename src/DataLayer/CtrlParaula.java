@@ -37,6 +37,7 @@ public class CtrlParaula implements DomainLayer.DataInterface.CtrlParaula {
             Categoria c = new Categoria();
             c.setNom(entity[2].toString());
             p[i].setCategoria(c);
+            ++i;
         }
         session.close();
         sessionFactory.close();
