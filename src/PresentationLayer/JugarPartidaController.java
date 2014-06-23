@@ -37,13 +37,6 @@ public class JugarPartidaController {
         return false;
     }
     public boolean premerOkCategoria(String nomCategoria) {
-        //aqui pedir a dominio crear la partida. Te devolverá una tupla
-        //que contiene el número de palabras, para dibujar las casillas.
-
-        /*se necesita el boleano para ver si la categoria tiene palabras*/
-        /*******incompleto*******/
-        /*retornar true si todo ha ido bien, retornar false si la categoria no tiene palabras*/
-        
         new JugarPartidaUseCaseController().getParaulesByCategoria(nomCategoria);
         if (new JugarPartidaUseCaseController().getParaulesByCategoria(nomCategoria)) {
             JugarPartidaUseCaseController controlador = new JugarPartidaUseCaseController();
@@ -67,7 +60,7 @@ public class JugarPartidaController {
     }
     
     public void premerAturar() {
-        //cosa nazi
+        new JugarPartidaUseCaseController().AturarPartida();
     }
     public void premerSortir() {
         System.exit(0);
