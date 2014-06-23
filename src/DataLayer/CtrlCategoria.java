@@ -3,6 +3,7 @@ package DataLayer;
 import DomainLayer.DomainModel.Categoria;
 import DomainLayer.DomainModel.Paraula;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import org.hibernate.Session;
@@ -29,13 +30,14 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         session = sessionFactory.openSession();
         
         String query = "SELECT nom FROM Categoria";
-        SQLQuery sqQ = session.createSQLQuery(query);
-        List result = sqQ.list();
-        Iterator iterator = result.iterator();
-        Object[] res = (Object[])iterator.next();
-        String[] lista = new String[res.length];
-        for (int i = 0; i < res.length; ++i) 
-            lista[i] = res[i].toString();
+        SQLQuery q = session.createSQLQuery(query);
+        List<Object[]> entities = q.list();
+        String[] lista = new String[entities.size()];
+        int i = 0;
+        for (Object[] entity : entities) {
+            lista[i] = entity[0].toString();
+            ++i;
+        }
 
         return lista;
     }
@@ -54,7 +56,11 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         session = sessionFactory.openSession();
         
         String query = "SELECT * FROM Categoria WHERE nom = " + s;
-        return session.createSQLQuery(query).addEntity(Categoria.class);
+        SQLQuery q = session.createSQLQuery(query);
+        Categoria c = q.addEntity(Categoria.class);
+        session.close();
+        sessionFactory.close();
+        return c;
     }
     
     @Override
@@ -71,7 +77,8 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         session = sessionFactory.openSession();
         
         String query = "SELECT * FROM Paraula WHERE categoria = cat ORDER BY RAND() LIMIT 1";       
-        Paraula p = session.createSQLQuery(query).addEntity(Paraula.class);
+        SQLQuery q = session.createSQLQuery(query);
+        Paraula p = q.addEntity(Paraula.class);
         session.close();
         sessionFactory.close();
         return p;
