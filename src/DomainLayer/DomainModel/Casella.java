@@ -17,10 +17,14 @@ public class Casella {
     private Lletra lletraCorrecta;
 	@Column(name="ES_ENCERTAT")
     private boolean esEncertat;
-	@Column(name="LLETRES_ERRONIES")
+	@CollectionOfElements(fetch = FetchType.EAGER)
     private ArrayList<Lletra> lletresErronies;
     //private Partida p;
 
+    public Casella(int idPartida, int pos, Lletra lletraCorrecta) {
+        this.casellaPK = new CasellaPK(idPartida, pos);
+        this.lletraCorrecta = lletraCorrecta;
+    }
     //getters
     public int getPosicio() {
         return posicio;
