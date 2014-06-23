@@ -13,7 +13,7 @@ public class LoginUseCaseController {
     public void Login(String userN, String passwd) throws ExcepcionsAS {
         
         FactoriaControllers f = FactoriaControllers.getInstance();
-        CtrlUsuariRegistrat cUR = f.obtenirCtrlUsuariRegistrat();
+        CtrlUsuariRegistrat cUR = f.getCtrlUsuariRegistrat();
         UsuariRegistrat usuariR = cUR.obtenirUsuariRegistrat(userN);
         if (usuariR.contrassenyaIncorrecta(passwd)) throw new ExcepcionsAS("Password Incorrecte");
         
