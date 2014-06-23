@@ -1,7 +1,7 @@
 package DomainLayer.Adapters;
 
-public class IMissatgeAdapter {
+public interface IMissatgeAdapter {
     
-    public void enviaMissatge(String nom, int punts, int errors) {}
+    public void enviaMissatge(String nom, int punts, int errors);
     
 }
