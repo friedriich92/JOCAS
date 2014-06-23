@@ -132,8 +132,7 @@ public class Partida {
         int nombrell = par.getNombreDeLletres();
         while (i < nombrell - 1) {
             String lletra = par.getLletraIessima(i);
-            Casella cas = new Casella();
-            cas.novaCasella(this, lletra, i);
+            Casella cas = new Casella(this.getIdPartida(), i, Lletra.valueOf(lletra));
             caselles.add(cas);
             ++i;
         }
