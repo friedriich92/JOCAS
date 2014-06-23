@@ -24,9 +24,11 @@ public class CtrlPartida implements DomainLayer.DataInterface.CtrlPartida {
        ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
        session = sessionFactory.openSession();
-        
-        String query = "SELECT * FROM Partida WHERE idPartida = " + idP;
-        return session.createSQLQuery(query).addEntity(Partida.class);
+       String query = "SELECT * FROM Partida WHERE idPartida = " + idP;
+       Partida p = session.createSQLQuery(query).addEntity(Partida.class);
+       session.close();
+       sessionFactory.close();
+       return p;
     }
     
     @Override
