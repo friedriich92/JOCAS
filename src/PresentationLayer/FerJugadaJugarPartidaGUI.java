@@ -362,6 +362,11 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         aturarButton.setMaximumSize(new java.awt.Dimension(120, 25));
         aturarButton.setMinimumSize(new java.awt.Dimension(120, 25));
         aturarButton.setPreferredSize(new java.awt.Dimension(120, 25));
+        aturarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aturarButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(aturarButton);
 
         pack();
@@ -398,6 +403,11 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Caracter no valid");
         }
     }//GEN-LAST:event_enviarLletraButtonActionPerformed
+
+    private void aturarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aturarButtonActionPerformed
+        new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
+        System.exit(0);
+    }//GEN-LAST:event_aturarButtonActionPerformed
 
     /**
      * @param args the command line arguments
