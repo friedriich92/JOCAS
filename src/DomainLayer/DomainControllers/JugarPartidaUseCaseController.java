@@ -71,23 +71,6 @@ public class JugarPartidaUseCaseController {
         return new Partida().crearPartida(jug, randPar);*/
 
     }
-        /*
-        CtrlJugador ctrlJug = f.getCtrlJugador();
-        CtrlParaula ctrlPar = f.getCtrlParaula();
-        CtrlPartida ctrlPart = f.getCtrlPartida();
-        
-        Paraula[] pars = ctrlPar.getParaulesByCategoria(cat);
-        int randomValue = new Random().nextInt(pars.length + 1);
-        Paraula randPar = pars[randomValue];
-        
-        Jugador jug = ctrlJug.obteJugador(nomUsuari);
-
-        //¿Utilizar el Ctrl de Partida para crear la Partida?
-        //return ctrlPart.crearPartida(jug, randPar);
-        //No, se ha de crear aquí mismo.
-        return new Partida().crearPartida(jug, randPar);*/
-
-    }
         
     
     public int[] FerJugada(int pos, String lletra) {
