@@ -14,5 +14,21 @@ public class CasellaPK {
 		this.idPartida = idPartida;
 		this.posicio = posicio;
 	}
+        
+        public int getPosicio() {
+            return posicio;
+        }
+        
+        public int getIdPartida() {
+            return idPartida;
+        }
+        
+        public void setPosicio(int pos) {
+            posicio = pos;
+        }
+        
+        public void setIdPartida(int idP) {
+            idPartida = idP;
+        }
 	
 }
