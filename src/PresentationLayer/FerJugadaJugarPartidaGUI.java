@@ -7,6 +7,7 @@ package PresentationLayer;
 import DomainLayer.Excepcions.ExcepcionsAS;
 import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 
@@ -36,6 +37,40 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         nEncertsLabel.setText("0");
         nErrorsLabel.setText("0");
         nPuntuacioLabel.setText(String.valueOf(puntuacioInicial));
+    
+        DocumentListener casellasListener = new DocumentListener() {
+            @Override
+            public void changedUpdate(DocumentEvent e) {}
+            @Override
+            public void removeUpdate(DocumentEvent e) {}
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                disableCaselles();
+            }
+        };
+        
+        casella0TextField.getDocument().addDocumentListener(casellasListener);
+        casella1TextField.getDocument().addDocumentListener(casellasListener);
+        casella2TextField.getDocument().addDocumentListener(casellasListener);
+        casella3TextField.getDocument().addDocumentListener(casellasListener);
+        casella4TextField.getDocument().addDocumentListener(casellasListener);
+        casella5TextField.getDocument().addDocumentListener(casellasListener);
+        casella6TextField.getDocument().addDocumentListener(casellasListener);
+        casella7TextField.getDocument().addDocumentListener(casellasListener);
+        casella8TextField.getDocument().addDocumentListener(casellasListener);
+    }
+    
+    private void disableCaselles() {   
+        casella0TextField.setEnabled(false);
+        casella1TextField.setEnabled(false);
+        casella2TextField.setEnabled(false);
+        casella3TextField.setEnabled(false);
+        casella4TextField.setEnabled(false);
+        casella5TextField.setEnabled(false);
+        casella6TextField.setEnabled(false);
+        casella7TextField.setEnabled(false);
+        casella8TextField.setEnabled(false);     
+    }
     
     private void mostrarCaselles(int nombreCaselles) {
         
@@ -375,20 +410,16 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enviarLletraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarLletraButtonActionPerformed
-<<<<<<< Updated upstream
- 
-=======
         
-   
-        int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
->>>>>>> Stashed changes
-        
+        JugarPartidaController controlador = new JugarPartidaController();
+
         try {
-            int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
+            int [] jugada = controlador.enviaLletra(WIDTH, null);
+            
             if (jugada[0] == 1) {
                 if (jugada[1] == 1){
                     JOptionPane.showMessageDialog(this, "Has guanyat!\nPuntuacio total: " + jugada[3]);
-                    new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
+                    controlador.premerAturar();
                     System.exit(0);
                 }
                 else {
@@ -397,7 +428,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
             }
             else if (jugada[1] == 1) {
                 JOptionPane.showMessageDialog(this, "Has perdut!\nPuntuacio total: " + jugada[3]);
-                    new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
+                    controlador.premerAturar();
                     System.exit(0);
             }
             else {  //No se ha acabado la partida. Actualizamos la vista.
