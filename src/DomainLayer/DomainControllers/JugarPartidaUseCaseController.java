@@ -93,5 +93,13 @@ public class JugarPartidaUseCaseController {
         j.partidaActualAcabada();
         //cj.aturarPartidaActual(nomUsuari);
     }
+    
+    public boolean getParaulesByCategoria(String cat) {
+        FactoriaControllers f = FactoriaControllers.getInstance();
+        CtrlParaula cP = f.getCtrlParaula();
+        Paraula[] p = cP.getParaulesByCategoria(cat);
+        if (p == null) return false;
+        return true;
+    }
 
 }
