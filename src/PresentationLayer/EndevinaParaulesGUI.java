@@ -4,6 +4,8 @@
  */
 package PresentationLayer;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author joan.barroso
@@ -94,6 +96,11 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
 
         buttonConsultarCategories.setText("Consultar Categories");
         buttonConsultarCategories.setPreferredSize(new java.awt.Dimension(200, 25));
+        buttonConsultarCategories.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonConsultarCategoriesActionPerformed(evt);
+            }
+        });
         panelButtons.add(buttonConsultarCategories);
 
         buttonAltres.setText("Altres");
@@ -151,6 +158,11 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
     private void buttonSortirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSortirActionPerformed
         new JugarPartidaController().premerSortir();
     }//GEN-LAST:event_buttonSortirActionPerformed
+
+    private void buttonConsultarCategoriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarCategoriesActionPerformed
+    JOptionPane.showMessageDialog(this, "Caracter no valid");
+    System.exit(0);// TODO add your handling code here:
+    }//GEN-LAST:event_buttonConsultarCategoriesActionPerformed
 
     /**
      * @param args the command line arguments
