@@ -8,6 +8,7 @@ import DomainLayer.DomainControllers.JugarPartidaUseCaseController;
 import DomainLayer.DomainControllers.LoginUseCaseController;
 import DomainLayer.DomainControllers.ConsultarCategoriesUseCaseController;
 import javax.swing.JFrame;
+import DomainLayer.Excepcions.ExcepcionsAS;
 /**
  *
  * @author joaquin.campos
@@ -28,11 +29,10 @@ public class JugarPartidaController {
             String[] categories = new ConsultarCategoriesUseCaseController().ConsultarCategories();
             new SeleccionarCategoriaJugarPartidaGUI(categories).setVisible(true);
         }
-        catch (/*usuari no jugador*/) {
-            return true;
-        }
-        catch(/*usuari no existeix*/) {
-            return false;
+        catch (ExcepcionsAS eAS) {
+            if (eAS.getMessage().equals("Password Incorrecte")) return false;
+            else if (eAS.getMessage().equals("Aquest Usuari no e un Jugador")) return true;
+
         }
         return false;
     }
@@ -43,10 +43,16 @@ public class JugarPartidaController {
         /*se necesita el boleano para ver si la categoria tiene palabras*/
         /*******incompleto*******/
         /*retornar true si todo ha ido bien, retornar false si la categoria no tiene palabras*/
-        JugarPartidaUseCaseController controlador = new JugarPartidaUseCaseController();
-        int[] tup = controlador.CrearPartida(nomCategoria);
-        new FerJugadaJugarPartidaGUI(tup[0], tup[1], tup[2], tup[3], tup[4]).setVisible(true);
-        return true;
+        
+        new JugarPartidaUseCaseController().getParaulesByCategoria(nomCategoria);
+        if (new JugarPartidaUseCaseController().getParaulesByCategoria(nomCategoria)) {
+            JugarPartidaUseCaseController controlador = new JugarPartidaUseCaseController();
+            int[] tup = controlador.CrearPartida(nomCategoria);
+            new FerJugadaJugarPartidaGUI(tup[0], tup[1], tup[2], tup[3], tup[4]).setVisible(true);
+            return true;
+        }
+        else return false;
+
     }
     public int[] enviaLletra(int posCasella, String lletra){
         JugarPartidaUseCaseController controlador = new JugarPartidaUseCaseController();
