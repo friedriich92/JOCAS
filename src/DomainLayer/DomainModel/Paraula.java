@@ -21,6 +21,10 @@ public class Paraula {
     public void setNom (String nouNom) {
         this.nom = nouNom;
     }
+    
+    public void setCategoria(Categoria c) {
+        categoria = c;
+    }
 
     public void setNombreDeLletres(int nouNombreDeLletres) {
         this.nombreDeLletres = nouNombreDeLletres;

@@ -35,7 +35,7 @@ public class CtrlJugador implements DomainLayer.DataInterface.CtrlJugador{
             j.setUsername(entity[0].toString());
             j.setEmail(entity[1].toString());
             j.setNom(entity[2].toString());
-            j.setCognom(entity[3].toSting());
+            j.setCognom(entity[3].toString());
         }
         session.close();
         sessionFactory.close();

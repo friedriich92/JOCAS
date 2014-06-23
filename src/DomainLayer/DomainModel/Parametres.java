@@ -31,18 +31,18 @@ public class Parametres {
     public int getIdPartida() {
         return idPartida;
     }
-    */
     
-    /*
+    
+    
     public void setIdPartida(int idP) {
         idPartida = idP;
     }
-    */
     
-    /*
+
+    
     public int NovaPartida() {
         idPartida++;
         return idPartida;
-    }
-    */
+    }*/
+    
 }

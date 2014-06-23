@@ -1,7 +1,10 @@
 package DataLayer;
 
+import DomainLayer.DomainModel.Categoria;
 import DomainLayer.DomainModel.Jugador;
+import DomainLayer.DomainModel.Paraula;
 import DomainLayer.DomainModel.UsuariRegistrat;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -25,10 +28,18 @@ public class CtrlUsuariRegistrat implements DomainLayer.DataInterface.CtrlUsuari
        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
        session = sessionFactory.openSession();
        String query = "SELECT * FROM UsuariRegistrat WHERE username = " + userN;
-       UsuariRegistrat UR = session.createSQLQuery(query).addEntity(UsuariRegistrat.class);
-       session.close();
-       sessionFactory.close();
-       return UR;
+        SQLQuery q = session.createSQLQuery(query);
+        List<Object[]> entities = q.list();
+        UsuariRegistrat uR = new UsuariRegistrat();
+        for (Object[] entity : entities) {
+            uR.setUsername(entity[0].toString());
+            uR.setPwd(entity[1].toString());
+            uR.setNom(entity[2].toString());
+            uR.setCognom(entity[3].toString());
+                    }
+        session.close();
+        sessionFactory.close();
+        return uR;
 
     }
 
