@@ -56,7 +56,7 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
     }
     
     @Override
-    public Paraula getParaulaRandom() {
+    public Paraula getParaulaRandom(String cat) {
         
         //creacion de la Session (?)
         
@@ -68,7 +68,7 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         session = sessionFactory.openSession();
         
-        String query = "SELECT * FROM Paraula ORDER BY RAND() LIMIT 1";
+        String query = "SELECT * FROM Paraula WHERE categoria = cat ORDER BY RAND() LIMIT 1";
         return session.createSQLQuery(query).addEntity(Paraula.class);
 
     }
