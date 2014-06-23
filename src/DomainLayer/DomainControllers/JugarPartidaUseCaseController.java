@@ -3,7 +3,6 @@ package DomainLayer.DomainControllers;
 import DomainLayer.DataInterface.*;
 import DomainLayer.DomainModel.*;
 import DomainLayer.Excepcions.*;
-import java.util.Random;
 
 
 public class JugarPartidaUseCaseController {
@@ -12,32 +11,20 @@ public class JugarPartidaUseCaseController {
     
     public void FerAutentificacio(String userN, String passwd) throws ExcepcionsAS {
         FactoriaControllers f = FactoriaControllers.getInstance();
-        CtrlUsuariRegistrat ur = f.obtenirCtrlUsuariRegistrat();
+        CtrlUsuariRegistrat ur = f.getCtrlUsuariRegistrat();
         UsuariRegistrat usuariR = ur.obtenirUsuariRegistrat(userN);
         LoginUseCaseController lUSC = new LoginUseCaseController();
         
-        try {
-            lUSC.Login(userN, passwd);
-        }
-        
-        catch(ExcepcionsAS eAS) {
-            eAS.getMessage();
-        }
-        
+        lUSC.Login(userN, passwd);       
         boolean juga = usuariR.esJugador();
         if (juga) throw new ExcepcionsAS("Aquest Usuari no es un Jugador");
         nomUsuari = userN;
     }
     
-    public String[] ObtenirCategories() {
+    public String[] ObtenirCategories() throws ExcepcionsAS{
         ConsultarCategoriesUseCaseController cGUSC = new ConsultarCategoriesUseCaseController();
         String[] nomCategories = null;
-        try {
-            nomCategories = cGUSC.ConsultarCategories();
-        }
-        catch(ExcepcionsAS eAS) {
-            eAS.getMessage();
-        }
+        nomCategories = cGUSC.ConsultarCategories();
         return nomCategories;
     }
     
@@ -73,16 +60,12 @@ public class JugarPartidaUseCaseController {
     }
         
     
-    public int[] FerJugada(int pos, String lletra) {
+    public int[] FerJugada(int pos, String lletra) throws ExcepcionsAS {
         FactoriaControllers f = FactoriaControllers.getInstance();
         CtrlPartida cP = f.getCtrlPartida();
         Partida p = cP.getPartida(idP);
         int[] tup = new int[0];
-        try {
-            tup = p.FerJugada(pos, lletra);
-        } catch (ExcepcionsAS eAS) {
-            eAS.getMessage();
-        }
+        tup = p.FerJugada(pos, lletra);
         return tup;
     }
     
@@ -101,5 +84,4 @@ public class JugarPartidaUseCaseController {
         if (p == null) return false;
         return true;
     }
-
 }
