@@ -4,6 +4,8 @@
  */
 package PresentationLayer;
 
+import DomainLayer.Excepcions.ExcepcionsAS;
+import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentListener;
 
@@ -373,13 +375,12 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enviarLletraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarLletraButtonActionPerformed
-        
-        
-        int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
+ 
         
         try {
+            int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
             if (jugada[0] == 1) {
-                if (jugada[1] == 1) {
+                if (jugada[1] == 1){
                     JOptionPane.showMessageDialog(this, "Has guanyat!\nPuntuacio total: " + jugada[3]);
                     new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
                     System.exit(0);
@@ -387,11 +388,13 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
                 else {
                     nErrorsLabel.setText("" + jugada[4]);
                 }
-            } else if (jugada[1] == 1) {
-                JOptionPane.showMessageDialog(this, "Has perdut!\nPuntuacio total: " + jugada[3]);                                          
-                new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
-                System.exit(0);
-            } else {  //No se ha acabado la partida. Actualizamos la vista.
+            }
+            else if (jugada[1] == 1) {
+                JOptionPane.showMessageDialog(this, "Has perdut!\nPuntuacio total: " + jugada[3]);
+                    new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
+                    System.exit(0);
+            }
+            else {  //No se ha acabado la partida. Actualizamos la vista.
                 int numErrors = Integer.parseInt(nErrorsLabel.getText());
                 if (jugada[4] != numErrors) //Si ha habido error, se actualiza el label.
                     nErrorsLabel.setText("" + jugada[4]);
@@ -403,10 +406,10 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
                 
             }
         }
-        catch (/*cosa*/) {
-            JOptionPane.showMessageDialog(this, "Caracter no valid");
-            
-        }
+        catch (ExcepcionsAS eAS) {
+            if (eAS.getMessage().equals("La lletra es Incorrecta"))JOptionPane.showMessageDialog(this, "Caracter no valid");
+        }       
+
     }//GEN-LAST:event_enviarLletraButtonActionPerformed
 
     private void aturarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aturarButtonActionPerformed
