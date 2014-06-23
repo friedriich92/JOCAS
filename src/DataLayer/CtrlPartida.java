@@ -34,8 +34,10 @@ public class CtrlPartida implements DomainLayer.DataInterface.CtrlPartida {
         return new int[]{0,1,2,3,4};
     }
     
+    /*
     @Override
     public int[] crearPartida(Jugador jug, Paraula par) {
         return null;   
     }
+    */
 }
