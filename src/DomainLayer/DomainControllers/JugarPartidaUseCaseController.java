@@ -45,8 +45,7 @@ public class JugarPartidaUseCaseController {
         FactoriaControllers f = FactoriaControllers.getInstance();
         CtrlCategoria CTcat = f.getCtrlCategoria();
         CtrlJugador CTj = f.getCtrlJugador();
-        Categoria C = CTcat.get(cat);
-        Paraula par = CTcat.getParaulaRandom();
+        Paraula par = CTcat.getParaulaRandom(cat);
         Jugador J = CTj.obteJugador(nomUsuari);
         Partida p = new Partida();
         int[] tCP = p.CreaPartida(J, par);
@@ -55,6 +54,23 @@ public class JugarPartidaUseCaseController {
         for (int i = 0; i < 5; ++i) newT[i] = tCP[i];
         return newT;
 
+        /*
+        CtrlJugador ctrlJug = f.getCtrlJugador();
+        CtrlParaula ctrlPar = f.getCtrlParaula();
+        CtrlPartida ctrlPart = f.getCtrlPartida();
+        
+        Paraula[] pars = ctrlPar.getParaulesByCategoria(cat);
+        int randomValue = new Random().nextInt(pars.length + 1);
+        Paraula randPar = pars[randomValue];
+        
+        Jugador jug = ctrlJug.obteJugador(nomUsuari);
+
+        //¿Utilizar el Ctrl de Partida para crear la Partida?
+        //return ctrlPart.crearPartida(jug, randPar);
+        //No, se ha de crear aquí mismo.
+        return new Partida().crearPartida(jug, randPar);*/
+
+    }
         /*
         CtrlJugador ctrlJug = f.getCtrlJugador();
         CtrlParaula ctrlPar = f.getCtrlParaula();
