@@ -24,10 +24,11 @@ public class CtrlUsuariRegistrat implements DomainLayer.DataInterface.CtrlUsuari
        ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
        session = sessionFactory.openSession();
-       
-       
        String query = "SELECT * FROM UsuariRegistrat WHERE username = " + userN;
-       return session.createSQLQuery(query).addEntity(UsuariRegistrat.class);
+       UsuariRegistrat UR = session.createSQLQuery(query).addEntity(UsuariRegistrat.class);
+       session.close();
+       sessionFactory.close();
+       return UR;
 
     }
 
