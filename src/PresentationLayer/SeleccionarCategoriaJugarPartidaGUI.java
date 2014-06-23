@@ -23,6 +23,10 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
         
     }
 
+    private SeleccionarCategoriaJugarPartidaGUI() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -103,16 +107,16 @@ public class SeleccionarCategoriaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        if (jList1.isSelectionEmpty()) jLabel1.setText("No has escollit cap categoria");
-        else {
-            int s  = jList1.getSelectedIndex();
-            if (new JugarPartidaController().premerOkCategoria(categories[s])){
-                dispose();
-            }
+            if (jList1.isSelectionEmpty()) jLabel1.setText("No has escollit cap categoria");
             else {
-                JOptionPane.showMessageDialog(this, "La categoria escollida no conté paraules");
+                int s  = jList1.getSelectedIndex();
+                if (new JugarPartidaController().premerOkCategoria(categories[s])){
+                    dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(this, "La categoria escollida no conté paraules");
+                }
             }
-        }
     }//GEN-LAST:event_okButtonActionPerformed
 
     /**
