@@ -375,7 +375,13 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enviarLletraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarLletraButtonActionPerformed
+<<<<<<< Updated upstream
  
+=======
+        
+   
+        int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
+>>>>>>> Stashed changes
         
         try {
             int [] jugada = new DomainLayer.DomainControllers.JugarPartidaUseCaseController().FerJugada(WIDTH, null);
