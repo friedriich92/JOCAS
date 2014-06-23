@@ -101,9 +101,7 @@ public class Partida {
     
     public int[] CreaPartida(Jugador J, Paraula par) {
         Parametres p = Parametres.getInstance();
-        int id = p.NovaPartida();
         int e = p.getNombreMaximErrors();
-        idPartida = id;
         teParaula = par;
         acabada = false;
         guanyada = false;
