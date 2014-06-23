@@ -10,5 +10,5 @@ public interface CtrlPartida {
     
     public int[] ferJugada(int idP, int pos, String lletra);
     
-    public int[] crearPartida(Jugador jug, Paraula par);
+    //public int[] crearPartida(Jugador jug, Paraula par);
 }
