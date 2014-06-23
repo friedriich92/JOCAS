@@ -5,6 +5,7 @@
 package PresentationLayer;
 
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentListener;
 
 
 /**
@@ -33,7 +34,6 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         nEncertsLabel.setText("0");
         nErrorsLabel.setText("0");
         nPuntuacioLabel.setText(String.valueOf(puntuacioInicial));
-    }
     
     private void mostrarCaselles(int nombreCaselles) {
         
@@ -379,15 +379,19 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         
         try {
             if (jugada[0] == 1) {
-                if (jugada[1] == 1) JOptionPane.showMessageDialog(this, "Has guanyat!\nPuntuacio total: " + jugada[3]);
+                if (jugada[1] == 1) {
+                    JOptionPane.showMessageDialog(this, "Has guanyat!\nPuntuacio total: " + jugada[3]);
+                    new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
+                    System.exit(0);
+                }
                 else {
                     nErrorsLabel.setText("" + jugada[4]);
                 }
-            }
-            else if (jugada[1] == 1) {
-                JOptionPane.showMessageDialog(this, "Has perdut!\nPuntuacio total: " + jugada[3]);
-            }
-            else {  //No se ha acabado la partida. Actualizamos la vista.
+            } else if (jugada[1] == 1) {
+                JOptionPane.showMessageDialog(this, "Has perdut!\nPuntuacio total: " + jugada[3]);                                          
+                new DomainLayer.DomainControllers.JugarPartidaUseCaseController().AturarPartida();
+                System.exit(0);
+            } else {  //No se ha acabado la partida. Actualizamos la vista.
                 int numErrors = Integer.parseInt(nErrorsLabel.getText());
                 if (jugada[4] != numErrors) //Si ha habido error, se actualiza el label.
                     nErrorsLabel.setText("" + jugada[4]);
@@ -401,6 +405,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         }
         catch (/*cosa*/) {
             JOptionPane.showMessageDialog(this, "Caracter no valid");
+            
         }
     }//GEN-LAST:event_enviarLletraButtonActionPerformed
 
