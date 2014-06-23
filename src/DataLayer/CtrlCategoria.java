@@ -68,8 +68,11 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         session = sessionFactory.openSession();
         
-        String query = "SELECT * FROM Paraula WHERE categoria = cat ORDER BY RAND() LIMIT 1";
-        return session.createSQLQuery(query).addEntity(Paraula.class);
+        String query = "SELECT * FROM Paraula WHERE categoria = cat ORDER BY RAND() LIMIT 1";       
+        Paraula p = session.createSQLQuery(query).addEntity(Paraula.class);
+        session.close();
+        sessionFactory.close();
+        return p;
 
     }
     
