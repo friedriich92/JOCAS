@@ -7,4 +7,5 @@ import DomainLayer.DomainModel.*;
  */
 public interface CtrlParaula {
     public Paraula[] getParaulesByCategoria(String cat);
+    public Paraula getParaula(String s);
 }
