@@ -10,5 +10,5 @@ import java.util.List;
 public interface CtrlCategoria {
     public String[] obteNomCategories();
     public Categoria get(String s);
-    public Paraula getParaulaRandom();
+    public Paraula getParaulaRandom(String cat);
 }
