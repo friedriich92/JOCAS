@@ -41,6 +41,9 @@ public class EndevinaParaulesGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Endevina Paraules");
+        setMaximumSize(new java.awt.Dimension(512, 384));
+        setMinimumSize(new java.awt.Dimension(512, 384));
+        setPreferredSize(new java.awt.Dimension(512, 384));
         setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
