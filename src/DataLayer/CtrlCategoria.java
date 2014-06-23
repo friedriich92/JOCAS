@@ -29,8 +29,10 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         session = sessionFactory.openSession();
         
         String query = "SELECT nom FROM Categoria";
-        Object[] res = session.createSQLQuery(query);
-
+        SQLQuery sqQ = session.createSQLQuery(query);
+        List result = sqQ.list();
+        Iterator iterator = result.iterator();
+        Object[] res = (Object[])iterator.next();
         String[] lista = new String[res.length];
         for (int i = 0; i < res.length; ++i) 
             lista[i] = res[i].toString();
