@@ -149,7 +149,7 @@ public class Partida {
     }
     
     
-    public List<Integer> FerJugada(int pos, String lletra) throws ExcepcionsAS {
+    public int[] FerJugada(int pos, String lletra) throws ExcepcionsAS {
         Lletra[] lletres = Lletra.values();
         boolean found = false;
         for (Lletra ll : lletres) 
@@ -175,17 +175,15 @@ public class Partida {
         }
         if (acabada)
             jugador.actualitzaRols(this);
-        List<Integer> tup = new ArrayList<Integer>();
-        tup.add(acertadaAct);
+        int[] tup = new int[5];
+        tup[0] = acertadaAct;
         Integer acabadaI = (acabada) ? 1 : 0;
         Integer guanyadaI = (guanyada) ? 1 : 0;
-        tup.add(acabadaI);
-        tup.add(guanyadaI);
-        tup.add(punts);
-        tup.add(errors);
+        tup[1] = acabadaI;
+        tup[2] = guanyadaI;
+        tup[3] = punts;
+        tup[4] = errors;
         return tup;
     }
-    
-    
     
 }
