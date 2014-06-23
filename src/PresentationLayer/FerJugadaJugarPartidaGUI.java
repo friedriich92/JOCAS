@@ -17,6 +17,9 @@ import javax.swing.event.DocumentListener;
  */
 public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
 
+    private int posicioCasellaModificada;
+    private String lletraCasellaModificada;
+    
     /**
      * Creates new form FerJugadaJugarPartidaGUI
      * @param puntuacioInicial
@@ -46,6 +49,27 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 disableCaselles();
+                Object owner = e.getDocument().getProperty("owner");
+                if (owner == casella0TextField) {
+                    posicioCasellaModificada = 0;
+                    lletraCasellaModici
+                }
+                else if (owner == casella1TextField)
+                    posicioCasella = 1;
+                else if (owner == casella2TextField)
+                    posicioCasella = 2;
+                else if (owner == casella3TextField)
+                    posicioCasella = 3;
+                else if (owner == casella4TextField)
+                    posicioCasella = 4;
+                else if (owner == casella5TextField)
+                    posicioCasella = 5;
+                else if (owner == casella6TextField)
+                    posicioCasella = 6;
+                else if (owner == casella7TextField)
+                    posicioCasella = 7;
+                else if (owner == casella8TextField)
+                    posicioCasella = 8;
             }
         };
         
@@ -414,7 +438,7 @@ public class FerJugadaJugarPartidaGUI extends javax.swing.JFrame {
         JugarPartidaController controlador = new JugarPartidaController();
 
         try {
-            int [] jugada = controlador.enviaLletra(WIDTH, null);
+            int [] jugada = controlador.enviaLletra(posicioCasella, );
             
             if (jugada[0] == 1) {
                 if (jugada[1] == 1){
