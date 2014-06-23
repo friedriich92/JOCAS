@@ -27,7 +27,7 @@ public class Casella {
     }
     //getters
     public int getPosicio() {
-        return posicio;
+        return casellaPK.getPosicio();
     }
 
     public Lletra getLletraCorrecta() {
@@ -39,10 +39,6 @@ public class Casella {
     }
 
     //setters
-    public void setPosicio (int novaPosicio) {
-        this.posicio = novaPosicio;
-    }
-
     public void setLletraCorrecta (Lletra novaLletraCorrecta) {
         this.lletraCorrecta = novaLletraCorrecta;
     }
@@ -56,13 +52,13 @@ public class Casella {
     }
     
     public void novaCasella(Partida p, String lletra, int i) {
-        posicio = i;
-        this.p = p;
+        casellaPK.setPosicio(i);
+        casellaPK.setIdPartida(p.getIdPartida());
         lletraCorrecta = Lletra.valueOf(lletra);
     }
     
     public boolean comprovaCasella(int pos, String lletra, Integer acertadaAct) {
-        if (posicio == pos) {
+        if (casellaPK.getPosicio() == pos) {
             Lletra a = Lletra.valueOf(lletra);
             boolean encert = (lletra.equals(lletraCorrecta.toString()));
             if (!encert) { 
