@@ -57,7 +57,11 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         
         String query = "SELECT * FROM Categoria WHERE nom = " + s;
         SQLQuery q = session.createSQLQuery(query);
-        Categoria c = q.addEntity(Categoria.class);
+        List<Object[]> entities = q.list();
+        Categoria c = new Categoria();
+        for (Object[] entity : entities) {
+            c.setNom(entity[0].toString());
+        }
         session.close();
         sessionFactory.close();
         return c;
@@ -78,7 +82,12 @@ public class CtrlCategoria implements DomainLayer.DataInterface.CtrlCategoria {
         
         String query = "SELECT * FROM Paraula WHERE categoria = cat ORDER BY RAND() LIMIT 1";       
         SQLQuery q = session.createSQLQuery(query);
-        Paraula p = q.addEntity(Paraula.class);
+        List<Object[]> entities = q.list();
+        
+        Paraula p = new Paraula();
+        for (Object[] entity : entities) {
+            p.setNom(entity[0].toString());
+        }
         session.close();
         sessionFactory.close();
         return p;
