@@ -27,7 +27,10 @@ public class CtrlJugador implements DomainLayer.DataInterface.CtrlJugador{
        session = sessionFactory.openSession();
         
         String query = "SELECT * FROM Jugador WHERE username = " + nomUsuari;
-        return session.createSQLQuery(query).addEntity(Jugador.class);
+        Jugador j = session.createSQLQuery(query).addEntity(Jugador.class);
+        session.close();
+        sessionFactory.close();
+        return j;
     }
     
     @Override
