@@ -10,7 +10,7 @@ public class Parametres {
     private static Parametres instance;
     @Column(name="MAX_ERRORS")
     private int nombreMaximErrors;
-    private int idPartida;
+    //private int idPartida;
 
     public static Parametres getInstance() {
         if (instance == null) {
@@ -27,7 +27,7 @@ public class Parametres {
         this.nombreMaximErrors = nombreMaximErrors;
     }
     
-    
+    /*
     public int getIdPartida() {
         return idPartida;
     }
@@ -43,6 +43,6 @@ public class Parametres {
     public int NovaPartida() {
         idPartida++;
         return idPartida;
-    }
+    }*/
     
 }
